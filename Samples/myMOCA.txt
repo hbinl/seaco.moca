@@ -1,0 +1,237 @@
+MCX0001
+[Home] {\}
+$ Welcome screen
+$ Select language
++ English <EN> MCE0001
++ Malay <MS> MCM0001***
++ Mandarin <ZH> MCZ0001***
+
+MCE0001 --> MCE0002
+
+MCE0002
+[Personal Details] {S}
+$ Enter your personal details
++ Name <textbox>
++ Education <dropdown>
++ Sex <boolean>
++ DOB <DateFormatPicker>
+- Back
+- Next
+* Home
+
+MCE0003
+[Personal Details] {M}
+$ Confirm his/her personal details
+$ Administered by: ________________
+- Back
+- Next
+* Home
+
+MCE1101
+[Executive: Connect] {S}
+$ Connect the dots
++ Connect
+- Next
+* Home
+
+MCE1102
+[Executive: Connect] {M}
+$ Connect the dots
++ Assess <1; connected dots>
+- Next
+* Home
+
+MCE1201
+[Executive: Cube] {S}
+$ Copy cube
++ Copy
+- Next
+* Home
+
+MCE1202
+[Executive: Cube] {M}
+$ Copy cube
++ Assess <1; copied cubes>
+- Next
+* Home
+
+MCE1301
+[Executive: Clock] {S}
+$ Draw clock (ten past eleven)
++ Draw
+- Next
+* Home
+
+MCE1302
+[Executive: Clock] {M}
+$ Draw clock (ten past eleven)
++ Assess <3; contour, numbers, hands>
+- Next
+* Home
+
+MCE2001
+[Naming: Lion] {M}
+$ Name that lion
++ Display <lion.png>
++ Assess <1; "lion">
+- Next
+* Home
+
+MCE2002
+[Naming: Rhinoceros] {M}
+$ Name that rhinoceros
++ Display <rhinoceros.png>
++ Assess <1; "rhinoceros">
+- Next
+* Home
+
+MCE2003
+[Naming: Camel] {M}
+$ Name that camel
++ Display <camel.png>
++ Assess <1; "camel">
+- Next
+* Home
+
+MCE3001
+[Memory: Trial #1] {M}
+$ Read list of words, subject must repeat them...
++ Read <"FACE", "VELVET", "CHURCH", "DAISY", "RED">
++ Assess <0; __>
+- Next
+* Home
+
+MCE3002
+[Memory: Trial #2] {M}
+$ ...do 2 trials, even if 1st trial is successful...
++ Read <"FACE", "VELVET", "CHURCH", "DAISY", "RED">
++ Assess <0; __>
+- Next
+* Home
+
+MCE3003
+[Memory: Timer] {M}
+$ ...do a recall after 5 minutes
++ START_TIMER for 5 min(s) <return(s) END_TIMER>
+- Next
+* Home
+
+MCE4101
+[Attention: Digits Forwards] {M}
+$ Read list of digits (1 digit/sec)
+$ Subject has to repeat them in the forward order
++ Read <"2", "1", "8", "5", "4">
++ Assess <1; "2", "1", "8", "5", "4">
+- Next
+* Home
+
+MCE4102
+[Attention: Digits Backwards] {M}
+$ Read list of digits (1 digit/sec)
+$ Subject has to repeat them in the backward order
++ Read <"7", "4", "2">
++ Assess <1; "2", "4", "7">
+- Next
+* Home
+
+MCE4201
+[Attention: Letters] {M}
+$ Read list of letters
+$ The subject must tap with his hand at each letter "A"
++ Read <"F", "B", "A", "C", "M", "N", "A", "A", "J", "K", "L", "B", "A", "F", "A", "K", "D", "E", "A", "A", "A", "J", "A", "M", "O", "F", "A", "A", "B">
++ Assess <1; no points if greater than 1 error>
+- Next
+* Home
+
+MCE4301
+[Attention: Serial 7 Subtraction] {M}
+$ Serial 7 Subtraction... starting at 100
+$ 3 pts (4 or 5 correct subtractions)
+$ 2 pts (2 or 3 correct)
+$ 1 pt (1 correct)
+$ 0 pt (0 correct)
++ Assess <3; "93", "86", "79", "72", "65">
+- Next
+* Home
+
+MCE5101
+[Language: Repeat #1] {M}
+$ Repeat...
++ Read <"I only know that John is the one to help today.">
++ Assess <1; __repeat__>
+- Next
+* Home
+
+MCE5102
+[Language: Repeat #2] {M}
++ Read <"The cat always hid under the couch when dogs were in the room.">
++ Assess <1; __repeat__>
+- Next
+* Home
+
+MCE5201
+[Language: Fluency] {M}
+$ Name maximum number of words in one minute that begin with the letter F
++ Read <__abovementioned__>
+~ 1_MIN_START
++ Assess <1; N more than or equal to 11 words>
+~ 1_MIN_END
+- Next
+* Home
+
+MCE6101
+[Abstraction: Vehicle] {M}
+$ Similarity between e.g. banana-orange=fruit
++ Read <"train-bicycle">
++ Assess <1; "vehicle">
+- Next
+* Home
+
+MCE6102
+[Abstraction: Measurement] {M}
+$ Similarity between e.g. banana-orange=fruit
++ Read <"watch-ruler">
++ Assess <1; "measurement">
+- Next
+* Home
+
+MCE7001
+[Delayed Recall: WITH NO CUE] {M}
+^ Proceed only if END_TIMER return(ed) from MCE3003
+$ "FACE", "VELVET", "CHURCH", "DAISY", "RED"
+$ Has to recall words with no cue
++ Assess <5; "FACE", "VELVET", "CHURCH", "DAISY", "RED">
+- Next(?)
+* Home
+
+MCE7002
+[Delayed Recall: Category Cue] {M} \ Optional...
+$ "FACE", "VELVET", "CHURCH", "DAISY", "RED"
+$ Has to recall words with category cue
++ Assess <0; __>
+- Next(?)
+* Home
+
+MCE7003
+[Delayed Recall: Multiple Choice Cue] {M} \ Optional...
+$ "FACE", "VELVET", "CHURCH", "DAISY", "RED"
+$ Has to recall words with multiple choice cue
++ Assess <0; __>
+- Next(?)
+* Home
+
+MCE8001
+[Orientation] {M}
+$ D'oh
++ Read <"Date?", "Month?", "Year?", "Day?", "Place?", "City?">
++ Assess <6; 1 pt for each correst response>
+- Next
+* Home
+
+MCE9001
+[Total] {M}
+$ Display total points
+$ Normal >= 26 / 30
+$ Add 1 point if <= 12 yr edu
+- Save !!!XML!!!
+* Home

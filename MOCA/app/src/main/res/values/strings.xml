@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name" translatable="false">MOCA</string>
+
+    <string name="short_title">MOCA</string>
+    <string name="full_title">Montreal Cognitive Assessment</string>
+    <string name="assessment_version" translatable="false">0.7</string>
+    <string-array name="language_choices">
+        <item>@string/lang_en</item>
+        <item>@string/lang_ms</item>
+        <item>@string/lang_zh</item>
+    </string-array>
+
+    <string name="lang_en" translatable="false">English</string>
+    <string name="lang_en_code" translatable="false">en</string>
+    <string name="lang_ms" translatable="false">Bahasa Melayu</string>
+    <string name="lang_ms_code" translatable="false">ms</string>
+    <string name="lang_zh" translatable="false">中文</string>
+    <string name="lang_zh_code" translatable="false">zh</string>
+    <string name="main_start">Start</string>
+</resources>

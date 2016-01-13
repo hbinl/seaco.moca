@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="full_title">Montreal Cognitive Assessment 测试</string>
+    <string name="short_title">MOCA 测试</string>
+    <string name="main_start">开始</string>
+</resources>
