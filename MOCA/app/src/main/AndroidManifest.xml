@@ -19,6 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".InfoScreen"
+            android:label="@string/title_activity_info_screen"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".HomeScreen"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeScreen" />
+        </activity>
     </application>
 
 </manifest>

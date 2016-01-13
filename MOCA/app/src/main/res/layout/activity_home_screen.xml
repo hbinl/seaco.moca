@@ -14,19 +14,55 @@
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
 
-
-    <TextView
-        android:id="@+id/main_title_view"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/full_title"
-        android:textColor="#ffffff"
-        android:textSize="50sp"
-        android:textStyle="bold"
+        android:layout_above="@+id/info_table_layout">
+        <TextView
+            android:id="@+id/main_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="@string/full_title"
+            android:textColor="#ffffff"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+
+            />
+        <TextView
+            android:layout_below="@+id/main_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_subtitle_view"
+            android:text="@string/moca_version"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textColor="#dddddd"
+
+            />
+    </RelativeLayout>
+
+
+    <TableLayout
+        android:id="@+id/info_table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/main_button_view"
-  />
+        android:background="#ffffff"
+        >
+        <TableRow android:background="#fcf4f1">
+            <Button /><Button />
+        </TableRow>
+        <TableRow android:background="#ff3f3d">
+            <Button /><Button />
+        </TableRow>
+        <TableRow android:background="#ffffa4">
+            <Button /><Button />
+        </TableRow>
+
+    </TableLayout>
     <LinearLayout
         android:id="@+id/main_button_view"
         android:layout_width="match_parent"
@@ -58,8 +94,8 @@
             android:text="@string/main_start"
             android:background="#00cc88"
             android:textColor="#ffffff"
-            android:textSize="32sp"
-            android:padding="10dp"/>
+            android:textSize="25sp"
+            android:padding="20dp"/>
     </LinearLayout>
 
 

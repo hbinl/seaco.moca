@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ public class HomeScreen extends AppCompatActivity {
     Locale myLocale;
     static int localeInt = 0;
     Spinner spinner;
+    Button startButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,22 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         populateLanguageChoice();
+
+        startButton = (Button) findViewById(R.id.main_start_button);
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadNextScreen();
+            }
+        });
+    }
+
+    private void loadNextScreen() {
+        Intent intent = new Intent(this, InfoScreen.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivityForResult(intent, 0);
+        overridePendingTransition(0,0);
+        //finish();
     }
 
     private void populateLanguageChoice() {

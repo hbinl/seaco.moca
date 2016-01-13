@@ -4,4 +4,10 @@
     <string name="full_title">Montreal Cognitive Assessment</string>
     <string name="short_title">Pengujian MOCA</string>
     <string name="main_start">Mula</string>
+    <string name="screen_menu_quit">Tamat</string>
+    <string name="confirm_exit_message">Pastikah anda nak tamat? Semua progress akan hilang.</string>
+    <string name="confirm_exit_title">Tamat Pengujian</string>
+    <string name="confirm_ok">Ya</string>
+    <string name="confirm_cancel">Tidak</string>
+    <string name="moca_version">Versi 7.1 BM</string>
 </resources>
