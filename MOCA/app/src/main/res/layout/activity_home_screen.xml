@@ -59,14 +59,15 @@
         android:stretchColumns="*"
         android:weightSum="4"
         android:paddingBottom="50dp"
-        android:paddingTop="30dp"
-        android:paddingRight="70dp"
+        android:paddingTop="60dp"
+        android:paddingRight="80dp"
         >
         <TableRow
             android:layout_width="wrap_content"
             android:gravity="center"
             android:layout_height="0dip"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:paddingBottom="20dp">
             <TextView
                 android:id="@+id/info_table_label_name"
                 android:text="@string/info_table_label_name"
@@ -85,7 +86,8 @@
             android:layout_width="wrap_content"
             android:gravity="center"
             android:layout_height="0dip"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:paddingBottom="20dp">
             <TextView
                 android:id="@+id/info_table_label_sex"
                 android:text="@string/info_table_label_sex"
@@ -103,7 +105,8 @@
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="0dip"
-            android:gravity="center">
+            android:gravity="center"
+            android:paddingBottom="20dp">
             <TextView
                 android:id="@+id/info_table_label_dob"
                 android:text="@string/info_table_label_dob"
@@ -123,7 +126,8 @@
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="0dip"
-            android:gravity="center">
+            android:gravity="center"
+            android:paddingBottom="20dp">
             <TextView
                 android:id="@+id/info_table_label_education"
                 android:text="@string/info_table_label_education"

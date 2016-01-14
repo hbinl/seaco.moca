@@ -51,4 +51,7 @@
     <string name="edu_others">Others</string>
     <string name="about_app">Developed by SEACO-Monash SSPIT 2015/2016.</string>
     <string name="main_name_error_msg">Assessing as anonymous participant.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

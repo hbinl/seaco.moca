@@ -12,17 +12,15 @@
     tools:context="com.seaco.moca.InfoScreen"
     tools:showIn="@layout/activity_info_screen">
 
-    <Button
-        android:id="@+id/main_start_button"
+    <RelativeLayout
+        android:id="@+id/moca_tests_container"
         style="?metaButtonBarButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text=" "
         android:background="#aaaaaa"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
         android:padding="0dp"
         android:layout_above="@+id/survey_label"/>
+
     <TextView
         android:id="@+id/survey_label"
         android:layout_width="match_parent"
