@@ -21,6 +21,44 @@
         <item>@string/edu_tertiary</item>
         <item>@string/edu_others</item>
     </string-array>
+
+    <string-array name="pageNameArray">
+        <item>@string/strname_overview</item>
+        <item>@string/strname_ve_node</item>
+        <item>@string/strname_ve_cube</item>
+        <item>@string/strname_ve_clock</item>
+        <item>@string/strname_naming</item>
+        <item>@string/strname_memory</item>
+        <item>@string/strname_att_digits</item>
+        <item>@string/strname_att_letters</item>
+        <item>@string/strname_att_sub</item>
+        <item>@string/strname_lang_repeat</item>
+        <item>@string/strname_lang_fluency</item>
+        <item>@string/strname_abstraction</item>
+        <item>@string/strname_delayed_recall</item>
+        <item>@string/strname_orientation</item>
+        <item>@string/summary_message</item>
+    </string-array>
+
+    <string name="strname_overview">Press the Next button on the right to begin.</string>
+    <string name="strname_ve_node">Visuospatial/Executive: Node</string>
+    <string name="strname_ve_cube">Visuospatial/Executive: Cube</string>
+    <string name="strname_ve_clock">Visuospatial/Executive: Clock</string>
+    <string name="strname_naming">Naming</string>
+    <string name="strname_memory">Memory</string>
+    <string name="strname_att_digits">Attention: Digits</string>
+    <string name="strname_att_letters">Attention: Letters</string>
+    <string name="strname_att_sub">Attention: Subtraction</string>
+    <string name="strname_lang_repeat">Language: Repeat</string>
+    <string name="strname_lang_fluency">Language: Fluency </string>
+    <string name="strname_abstraction">Abstraction</string>
+    <string name="strname_delayed_recall">Delayed Recall</string>
+    <string name="strname_orientation">Orientation</string>
+    <string name="summary_message">Summary data saved. Click the Finish button to exit.</string>
+    <string name="saved_message">Data saved. Proceeding to Next Test...</string>
+
+
+    <string name="summary_screen_message">The test has been completed. Data saved successfully.</string>
     <string name="lang_en" translatable="false">English</string>
     <string name="lang_en_code" translatable="false">en</string>
     <string name="lang_ms" translatable="false">Bahasa Melayu</string>
@@ -29,8 +67,9 @@
     <string name="lang_zh_code" translatable="false">zh</string>
     <string name="main_start">Start</string>
     <string name="screen_menu_quit">Quit</string>
-    <string name="screen_menu_view_files" translatable="false">View Past Data</string>
-    <string name="screen_menu_about" translatable="false">About</string>
+    <string name="screen_menu_finish">Finish</string>
+    <string name="screen_menu_view_files">View Past Data</string>
+    <string name="screen_menu_about">About...</string>
     <string name="title_activity_info_screen" translatable="false">MOCA</string>
     <string name="confirm_exit_title">Confirm Exit</string>
     <string name="confirm_exit_message">"Are you sure you want to quit? All progress will be lost."</string>
@@ -49,9 +88,8 @@
     <string name="edu_secondary">Secondary level</string>
     <string name="edu_tertiary">Tertiary level</string>
     <string name="edu_others">Others</string>
-    <string name="about_app">Developed by SEACO-Monash SSPIT 2015/2016.</string>
+    <string name="about_app" translatable="false">Developed by SEACO-Monash SSPIT 15/16 -  Hao Bin, Nigel, Woei Jer</string>
     <string name="main_name_error_msg">Assessing as anonymous participant.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -21,6 +21,25 @@
     <string name="info_table_label_education">Pendidikan: </string>
     <string name="info_table_label_name">Nama: </string>
     <string name="info_table_label_sex">Jantina: </string>
-    <string name="screen_menu_about">About</string>
+    <string name="screen_menu_about">Mengenai Aplikasi Ini...</string>
     <string name="screen_menu_view_files">View Past Data</string>
+    <string name="main_name_error_msg">Nama: Anonymous</string>
+    <string name="strname_abstraction">Pengabstrakan</string>
+    <string name="screen_menu_finish">Lengkap</string>
+    <string name="strname_att_digits">Penumpuan: Digit</string>
+    <string name="strname_att_letters">Penumpuan: Huruf</string>
+    <string name="strname_att_sub">Penumpuan: Tolak</string>
+    <string name="strname_delayed_recall">Ingatan Kembali Yang Tertunda</string>
+    <string name="strname_lang_fluency">Bahasa: Kelancaran</string>
+    <string name="strname_lang_repeat">Bahasa: Ulang</string>
+    <string name="strname_memory">Ingatan</string>
+    <string name="strname_naming">Penamaan</string>
+    <string name="strname_orientation">Orientasi</string>
+    <string name="strname_overview">Sila tekan untuk bermula.</string>
+    <string name="strname_ve_clock">Penghayatan Ruang/Eksekutif</string>
+    <string name="strname_ve_cube">Penghayatan Ruang/Eksekutif</string>
+    <string name="strname_ve_node">Penghayatan Ruang/Eksekutif</string>
+    <string name="summary_message">Data telah disimpan. Anda boleh tamat.</string>
+    <string name="summary_screen_message">Pengujian telah dijalankan dengan berjaya.</string>
+    <string name="saved_message">Data disimpan. Teruskan...</string>
 </resources>
