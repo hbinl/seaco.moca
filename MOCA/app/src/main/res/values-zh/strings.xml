@@ -9,4 +9,15 @@
     <string name="confirm_ok">肯定</string>
     <string name="confirm_cancel">否定</string>
     <string name="moca_version">中文 7.1版本 (新加坡)</string>
+    <string name="edu_none">没有受过教育</string>
+    <string name="edu_others">其他</string>
+    <string name="edu_secondary">中学／高中</string>
+    <string name="edu_primary">小学</string>
+    <string name="edu_tertiary">大学</string>
+    <string name="gender_female">女</string>
+    <string name="info_table_label_dob">生日：</string>
+    <string name="gender_male">男</string>
+    <string name="info_table_label_name">姓名：</string>
+    <string name="info_table_label_education">教育程度：</string>
+    <string name="info_table_label_sex">性别：</string>
 </resources>

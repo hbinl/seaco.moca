@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">MOCA</string>
+    <string name="app_name" translatable="false">SEACO MOCA</string>
 
     <string name="short_title">MOCA</string>
     <string name="full_title">Montreal Cognitive Assessment</string>
@@ -9,7 +9,18 @@
         <item>@string/lang_ms</item>
         <item>@string/lang_zh</item>
     </string-array>
+    <string-array name="gender_choices">
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
 
+    <string-array name="education_choices">
+        <item>@string/edu_none</item>
+        <item>@string/edu_primary</item>
+        <item>@string/edu_secondary</item>
+        <item>@string/edu_tertiary</item>
+        <item>@string/edu_others</item>
+    </string-array>
     <string name="lang_en" translatable="false">English</string>
     <string name="lang_en_code" translatable="false">en</string>
     <string name="lang_ms" translatable="false">Bahasa Melayu</string>
@@ -18,10 +29,26 @@
     <string name="lang_zh_code" translatable="false">zh</string>
     <string name="main_start">Start</string>
     <string name="screen_menu_quit">Quit</string>
+    <string name="screen_menu_view_files" translatable="false">View Past Data</string>
+    <string name="screen_menu_about" translatable="false">About</string>
     <string name="title_activity_info_screen" translatable="false">MOCA</string>
     <string name="confirm_exit_title">Confirm Exit</string>
     <string name="confirm_exit_message">"Are you sure you want to quit? All progress will be lost."</string>
     <string name="confirm_ok">Yes</string>
     <string name="confirm_cancel">No</string>
     <string name="moca_version">"Version 7.1 ORIGINAL"</string>
+    <string name="info_table_label_name">Name: </string>
+    <string name="info_table_label_sex">Gender: </string>
+    <string name="info_table_label_dob">Date of Birth: </string>
+    <string name="info_table_label_education">Education: </string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+    <string name="edu_none">None</string>
+    <string name="edu_primary">Primary level</string>
+    <string name="edu_secondary">Secondary level</string>
+    <string name="edu_tertiary">Tertiary level</string>
+    <string name="edu_others">Others</string>
+    <string name="about_app">Developed by SEACO-Monash SSPIT 2015/2016.</string>
+    <string name="main_name_error_msg">Assessing as anonymous participant.</string>
 </resources>

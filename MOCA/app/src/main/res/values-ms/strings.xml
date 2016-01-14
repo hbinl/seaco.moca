@@ -10,4 +10,17 @@
     <string name="confirm_ok">Ya</string>
     <string name="confirm_cancel">Tidak</string>
     <string name="moca_version">Versi 7.1 BM</string>
+    <string name="edu_none">Tak Ada</string>
+    <string name="edu_others">Lain-lain</string>
+    <string name="edu_primary">Peringkat Sekolah Rendah</string>
+    <string name="edu_secondary">Peringkat Sekolah Menengah</string>
+    <string name="edu_tertiary">Peringkat Tertiari</string>
+    <string name="gender_female">Perempuan</string>
+    <string name="gender_male">Lelaki</string>
+    <string name="info_table_label_dob">Tarikh Lahir: </string>
+    <string name="info_table_label_education">Pendidikan: </string>
+    <string name="info_table_label_name">Nama: </string>
+    <string name="info_table_label_sex">Jantina: </string>
+    <string name="screen_menu_about">About</string>
+    <string name="screen_menu_view_files">View Past Data</string>
 </resources>
