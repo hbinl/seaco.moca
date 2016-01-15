@@ -31,10 +31,12 @@
         android:layout_gravity="bottom|start"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_arrow_back_white_48dp"
-        app:backgroundTint="#0174DF"/>
+        app:backgroundTint="#0174DF"
+        android:title = "Back"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_forward"
+        android:title = "Next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

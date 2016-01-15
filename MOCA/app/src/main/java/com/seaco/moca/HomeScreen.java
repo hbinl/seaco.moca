@@ -1,25 +1,16 @@
 package com.seaco.moca;
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.InputType;
-import android.text.format.Time;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,12 +18,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
-import java.util.Random;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -41,13 +30,14 @@ import java.util.Random;
 public class HomeScreen extends AppCompatActivity {
 
     static int localeInt = 0;
+    static HashMap<String, String> userData;
+    static XMLHandlerSession xmlHandlerSession;
+
     Spinner spinner;
     Button startButton;
 
-    static HashMap<String, String> userData;
     DatePickerDialog.OnDateSetListener dateListener;
     Calendar c;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +46,7 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         userData = new HashMap<String, String>();
+        userData.put("lang", getString(R.string.lang_en_code) );
         c = Calendar.getInstance();
 
         populateLanguageChoice();
@@ -69,34 +60,39 @@ public class HomeScreen extends AppCompatActivity {
                 if (validateForm()) {
                     try {
                         Thread.sleep(300);
-                    } catch(InterruptedException ex) {
+                    } catch (InterruptedException ex) {
                         Thread.currentThread().interrupt();
                     }
-                    createSessionFile();
+                    createSession();
                     loadNextScreen();
                 }
             }
         });
+
     }
 
-    private void createSessionFile() {
 
-        String currentDateTime = c.get(Calendar.YEAR) + "/"
-                + (c.get(Calendar.MONTH)+1)
-                + "/" + c.get(Calendar.DAY_OF_MONTH)
-                + "-" + c.get(Calendar.HOUR_OF_DAY)
-                + ":" + c.get(Calendar.MINUTE);
-        userData.put("testDateTime", currentDateTime);
 
-        String UUID = "";
-
-        char[] ints = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-        Random randomizer = new Random();
-        for (int i=0; i<16; i++) {
-            char random = ints[randomizer.nextInt(ints.length)];
-            UUID += random;
+    private void createSession() {
+        xmlHandlerSession = new XMLHandlerSession(userData);
+        for (HashMap.Entry<String, String> e : userData.entrySet()) {
+            System.out.println(e.getKey() + " : " + e.getValue());
         }
-        System.out.println(UUID + " " + userData.values());
+
+        // Test Data
+//        HashMap<String, String> map = new HashMap<String,String>();
+//        map.put("time", "1");
+//        map.put("haha", "huhu");
+//        map.put("xls", "sfa");
+//        xmlHandlerSession.saveTestData("visuo", map);
+//        map.put("time", "1");
+//        map.put("haha", "huhu");
+//        map.put("xls", "sfa");
+//        xmlHandlerSession.saveTestData("visuo", map);
+//        map.put("time", "5");
+//        map.put("haha", "hueehu");
+//        map.put("xls", "sf332a");
+//        xmlHandlerSession.saveTestData("visuo2", map);
 
     }
 
@@ -118,19 +114,19 @@ public class HomeScreen extends AppCompatActivity {
         {
             dateListener = new DatePickerDialog.OnDateSetListener() {
                 public void onDateSet(DatePicker picker, int y, int m, int d) {
-                    String dob = y + "/" + (m+1) + "/" + (d+1);
+                    String dob = y + "-" + (m+1) + "-" + (d+1);
                     System.out.println(dob);
                     EditText dateField = (EditText) findViewById(R.id.info_table_field_dob);
                     dateField.setText(dob);
-                    userData.put("DateOfBirth", dob);
+                    userData.put("dob", dob);
                 }
             };
             EditText editText = (EditText) findViewById(R.id.info_table_field_dob);
-            String todayDate = c.get(Calendar.YEAR) + "/"
+            String todayDate = c.get(Calendar.YEAR) + "-"
                     + (c.get(Calendar.MONTH)+1)
-                    + "/" + c.get(Calendar.DAY_OF_MONTH);
+                    + "-" + c.get(Calendar.DAY_OF_MONTH);
             editText.setText(todayDate);
-            userData.put("DateOfBirth", todayDate);
+            userData.put("dob", todayDate);
 
             editText.setInputType(InputType.TYPE_NULL);
             editText.setFocusable(false);
@@ -249,12 +245,15 @@ public class HomeScreen extends AppCompatActivity {
 
     private void setLocaleHelper() {
         if (localeInt == 0) {
+            userData.put("lang", getString(R.string.lang_en_code) );
             setLocale(getString(R.string.lang_en_code));
 
         } else if (localeInt == 1) {
+            userData.put("lang", getString(R.string.lang_ms_code));
             setLocale(getString(R.string.lang_ms_code));
 
         } else if (localeInt == 2) {
+            userData.put("lang", getString(R.string.lang_zh_code));
             setLocale(getString(R.string.lang_zh_code));
 
         }

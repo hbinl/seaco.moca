@@ -54,7 +54,7 @@ public class InfoScreen extends AppCompatActivity {
         fab_forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (pageIndex < (pageArray.length-2)) {
+                if (pageIndex != 0 && pageIndex < (pageArray.length-2)) {
                     Snackbar.make(view, R.string.saved_message, Snackbar.LENGTH_SHORT)
                             .setAction("Next", null).show();
                 }

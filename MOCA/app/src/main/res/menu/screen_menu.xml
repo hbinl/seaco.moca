@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_quit"
         android:title="@string/screen_menu_quit"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_cancel"/>
     <item android:id="@+id/action_finish"
         android:title="@string/screen_menu_finish"
         app:showAsAction="always"/>

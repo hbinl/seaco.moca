@@ -173,7 +173,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.7"
             android:text="@string/main_start"
-            android:background="#2F36A9"
+            android:background="#3F48BA"
             android:textColor="#ffffff"
             android:textSize="25sp"
             android:padding="20dp"/>
