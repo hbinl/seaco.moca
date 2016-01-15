@@ -31,9 +31,11 @@ public class InfoScreen extends AppCompatActivity {
     static int pageIndex;
     static Integer[] pageArray;
     static String[] pageNameArray;
+    static TestHandler testHandler;
     FloatingActionButton fab_forward;
     FloatingActionButton fab_back;
     Menu menu_ref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class InfoScreen extends AppCompatActivity {
         View child = getLayoutInflater().inflate(pageArray[pageIndex],null);
         container.addView(child);
 
-
+        testHandler = new TestHandler(this);
     }
 
 

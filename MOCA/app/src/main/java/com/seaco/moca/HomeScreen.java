@@ -4,6 +4,8 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -286,11 +288,14 @@ public class HomeScreen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_view:
-                Snackbar.make(this.startButton, "Not yet implemented", Snackbar.LENGTH_LONG)
+                String folderPath = Environment.getExternalStorageDirectory().getPath() + "/SEACO/MOCA/";
+
+                Snackbar.make(this.startButton, "Path: " + folderPath, Snackbar.LENGTH_INDEFINITE)
                         .setAction("Next", null).show();
 
 
                 return true;
+
             case R.id.action_about:
                 Snackbar.make(this.startButton, getString(R.string.about_app), Snackbar.LENGTH_LONG)
                         .setAction("Next", null).show();
