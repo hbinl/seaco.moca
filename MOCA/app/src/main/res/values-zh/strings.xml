@@ -41,4 +41,7 @@
     <string name="summary_screen_message">测试完成。资料已被存档。</string>
     <string name="screen_menu_about">关于...</string>
     <string name="screen_menu_view_files">查看过去资料</string>
+    <string name="moca_overview_summary_text">此测验含有十三部分。 \n请按右下角的按钮以开始测验。</string>
+    <string name="moca_visuo_clock_helptext"></string>
+    <string name="moca_summary_text">测验完成。\n请按 完成 以退出。</string>
 </resources>

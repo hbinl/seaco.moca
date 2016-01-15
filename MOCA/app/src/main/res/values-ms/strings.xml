@@ -42,4 +42,6 @@
     <string name="summary_message">Data telah disimpan. Anda boleh tamat.</string>
     <string name="summary_screen_message">Pengujian telah dijalankan dengan berjaya.</string>
     <string name="saved_message">Data disimpan. Teruskan...</string>
+    <string name="moca_overview_summary_text">Ujian ini mengandungi 13 bahagian. \n Tekan Next untuk mula.</string>
+    <string name="moca_summary_text">Pengujian ini telah tamat. \nTekan butang Tamat untuk menamatkan ujian.</string>
 </resources>

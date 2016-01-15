@@ -42,7 +42,7 @@
     <string name="moca_overview_summary_text">This test consists of 13 sections. \nPress the Next button on the right to begin.</string>
     <string name="moca_summary_text">You have successfully completed all the tests. \nClick the Finish button to exit.</string>
     <string name="moca_visuo_clock_helptext">Draw clock pls</string>
-
+    <string name="moca_orientation_helptext">Please answer the following questions.</string>
     <string name="strname_overview"> </string>
     <string name="strname_ve_node">Visuospatial/Executive: Node</string>
     <string name="strname_ve_cube">Visuospatial/Executive: Cube</string>
@@ -92,5 +92,11 @@
     <string name="about_app" translatable="false">Developed by SEACO-Monash SSPIT 15/16 -  Hao Bin, Nigel, Woei Jer</string>
     <string name="main_name_error_msg">Assessing as anonymous participant.</string>
 
+    <string name="moca_orientation_day">Day</string>
+    <string name="moca_orientation_month">Month</string>
+    <string name="moca_orientation_year">Year</string>
+    <string name="moca_orientation_weekday">Weekday</string>
+    <string name="moca_orientation_place">Place</string>
+    <string name="moca_orientation_city">City</string>
 
 </resources>

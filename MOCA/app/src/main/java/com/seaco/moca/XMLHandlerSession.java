@@ -37,6 +37,7 @@ public class XMLHandlerSession {
 
     public XMLHandlerSession(HashMap<String, String> userData) {
         c = Calendar.getInstance();
+
         UUID = generateUUID();
 
         filename = generateFileName();
@@ -54,8 +55,8 @@ public class XMLHandlerSession {
         }
 
 
-    public void saveTestData(String testname, HashMap<String, String> map) {
-        Element test = doc.createElement(testname);
+    public boolean saveTestData(String nodeRoot, HashMap<String, String> map, boolean replace) {
+        Element test = doc.createElement(nodeRoot);
         for (HashMap.Entry<String, String> e : map.entrySet()) {
             Node key = doc.createElement(e.getKey());
             Node value = doc.createTextNode(e.getValue());
@@ -64,8 +65,21 @@ public class XMLHandlerSession {
             System.out.println(e.getKey() + " : " + e.getValue());
         }
         Node tests = doc.getElementsByTagName("moca-tests").item(0);
+
+        if (doc.getElementsByTagName(nodeRoot).getLength() != 0) {
+            if (replace) {
+                for (int i=0; i<doc.getElementsByTagName(nodeRoot).getLength(); i++) {
+                    tests.removeChild(doc.getElementsByTagName(nodeRoot).item(i));
+                }
+            } else {
+                return false;
+            }
+        }
         tests.appendChild(test);
         writeFile();
+        return true;
+
+
     }
 
     private void initializeWithInitialUserSessionData(HashMap<String, String> data) {
@@ -136,11 +150,13 @@ public class XMLHandlerSession {
     }
 
     public String getCurrentDateTime() {
+        c = Calendar.getInstance();
+
         String currentDateTime = c.get(Calendar.YEAR) + "-"
                 + (c.get(Calendar.MONTH)+1)
                 + "-" + c.get(Calendar.DAY_OF_MONTH)
-                + "-" + c.get(Calendar.HOUR_OF_DAY)
-                + "" + c.get(Calendar.MINUTE);
+                + "-" + String.format("%02d", c.get(Calendar.HOUR_OF_DAY))
+                 + String.format("%02d", c.get(Calendar.MINUTE));
         return currentDateTime;
     }
 

@@ -79,20 +79,20 @@ public class HomeScreen extends AppCompatActivity {
             System.out.println(e.getKey() + " : " + e.getValue());
         }
 
-        // Test Data
+////         Test Data
 //        HashMap<String, String> map = new HashMap<String,String>();
 //        map.put("time", "1");
 //        map.put("haha", "huhu");
 //        map.put("xls", "sfa");
-//        xmlHandlerSession.saveTestData("visuo", map);
-//        map.put("time", "1");
+//        xmlHandlerSession.saveTestData("visuo", map, true);
+//        map.put("time", "50");
 //        map.put("haha", "huhu");
 //        map.put("xls", "sfa");
-//        xmlHandlerSession.saveTestData("visuo", map);
+//        xmlHandlerSession.saveTestData("visuo", map, true);
 //        map.put("time", "5");
 //        map.put("haha", "hueehu");
 //        map.put("xls", "sf332a");
-//        xmlHandlerSession.saveTestData("visuo2", map);
+//        xmlHandlerSession.saveTestData("visuo2", map, true);
 
     }
 

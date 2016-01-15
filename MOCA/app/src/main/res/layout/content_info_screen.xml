@@ -17,10 +17,10 @@
         style="?metaButtonBarButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#aaaaaa"
         android:padding="0dp"
         android:gravity="center"
-        android:layout_above="@+id/survey_label"/>
+        android:layout_above="@+id/survey_label"
+        android:background="#ededed"/>
 
     <TextView
         android:id="@+id/survey_label"

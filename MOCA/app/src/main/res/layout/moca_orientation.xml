@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" android:gravity="center"
+    android:background="#ededed">
+    <TextView
+        android:id="@+id/moca_orientation_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/moca_orientation_helptext"
+        android:gravity="center"
+        android:textSize="20sp"
 
-</LinearLayout>
+        />
+    <RelativeLayout
+        android:layout_below="@+id/moca_orientation_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="100dp"
+            >
+            <TableRow>
+
+                <TextView
+                    android:text="@string/moca_orientation_day"
+                    android:layout_width="80dp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+                <EditText />
+                <CheckBox />
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_orientation_month"
+                    android:layout_width="80dp"
+                    android:gravity="right" android:paddingRight="20dp"/>
+                <EditText />
+                <CheckBox />
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_orientation_year"
+                    android:layout_width="80dp"
+                    android:gravity="right" android:paddingRight="20dp"/>
+                <EditText />
+                <CheckBox />
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_orientation_weekday"
+                    android:layout_width="80dp"
+                    android:gravity="right" android:paddingRight="20dp"/>
+                <EditText />
+                <CheckBox />
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_orientation_place"
+                    android:layout_width="80dp"
+                    android:gravity="right" android:paddingRight="20dp"/>
+                <EditText />
+                <CheckBox />
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_orientation_city"
+                    android:layout_width="80dp"
+                    android:gravity="right" android:paddingRight="20dp"/>
+                <EditText />
+                <CheckBox />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
