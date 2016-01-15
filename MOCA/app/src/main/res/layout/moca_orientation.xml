@@ -26,54 +26,65 @@
             android:padding="100dp"
             >
             <TableRow>
-
                 <TextView
                     android:text="@string/moca_orientation_day"
                     android:layout_width="80dp"
                     android:gravity="right"
                     android:paddingRight="20dp"/>
-                <EditText />
-                <CheckBox />
+                <EditText
+                    android:id="@+id/moca_orientation_day_field"/>
+                <CheckBox
+                    android:id="@+id/moca_orientation_day_mark"/>
             </TableRow>
             <TableRow>
 
                 <TextView android:text="@string/moca_orientation_month"
                     android:layout_width="80dp"
                     android:gravity="right" android:paddingRight="20dp"/>
-                <EditText />
-                <CheckBox />
+                <EditText
+                    android:id="@+id/moca_orientation_month_field"/>
+                <CheckBox
+                    android:id="@+id/moca_orientation_month_mark"/>
             </TableRow>
             <TableRow>
 
                 <TextView android:text="@string/moca_orientation_year"
                     android:layout_width="80dp"
                     android:gravity="right" android:paddingRight="20dp"/>
-                <EditText />
-                <CheckBox />
+                <EditText
+                    android:id="@+id/moca_orientation_year_field"/>
+                <CheckBox
+                    android:id="@+id/moca_orientation_year_mark"/>
             </TableRow>
             <TableRow>
 
                 <TextView android:text="@string/moca_orientation_weekday"
                     android:layout_width="80dp"
                     android:gravity="right" android:paddingRight="20dp"/>
-                <EditText />
-                <CheckBox />
+                <EditText
+                    android:id="@+id/moca_orientation_weekday_field"/>
+                <CheckBox
+                    android:id="@+id/moca_orientation_weekday_mark"/>
             </TableRow>
             <TableRow>
 
                 <TextView android:text="@string/moca_orientation_place"
                     android:layout_width="80dp"
                     android:gravity="right" android:paddingRight="20dp"/>
-                <EditText />
-                <CheckBox />
+                <EditText
+                    android:id="@+id/moca_orientation_place_field"/>
+                <CheckBox
+                    android:id="@+id/moca_orientation_place_mark"/>
             </TableRow>
             <TableRow>
 
                 <TextView android:text="@string/moca_orientation_city"
                     android:layout_width="80dp"
                     android:gravity="right" android:paddingRight="20dp"/>
-                <EditText />
-                <CheckBox />
+                <EditText
+                    android:id="@+id/moca_orientation_city_field"/>
+                <CheckBox
+                    android:id="@+id/moca_orientation_city_mark"/>
             </TableRow>
         </TableLayout>
     </RelativeLayout>

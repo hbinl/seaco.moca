@@ -55,6 +55,15 @@ public class XMLHandlerSession {
         }
 
 
+    public void saveFinalMarks(int mark) {
+        Element finalM = doc.createElement("total-marks");
+        Node value = doc.createTextNode(String.valueOf(mark));
+        finalM.appendChild(value);
+        root.appendChild(finalM);
+
+        writeFile();
+    }
+
     public boolean saveTestData(String nodeRoot, HashMap<String, String> map, boolean replace) {
         Element test = doc.createElement(nodeRoot);
         for (HashMap.Entry<String, String> e : map.entrySet()) {

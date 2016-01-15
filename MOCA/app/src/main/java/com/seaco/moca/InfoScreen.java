@@ -23,6 +23,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.lang.reflect.Method;
+
 public class InfoScreen extends AppCompatActivity {
 
 //    FragmentManager fragmentManager;
@@ -35,10 +37,15 @@ public class InfoScreen extends AppCompatActivity {
     FloatingActionButton fab_forward;
     FloatingActionButton fab_back;
     Menu menu_ref;
+    static XMLHandlerSession session;
 
+    public static int getPageIndex() {
+        return pageIndex;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        session = HomeScreen.xmlHandlerSession;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -56,11 +63,12 @@ public class InfoScreen extends AppCompatActivity {
         fab_forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (pageIndex != 0 && pageIndex < (pageArray.length-2)) {
+                if (pageIndex != 0 && pageIndex < (pageArray.length - 1)) {
+                    validateTest();
                     Snackbar.make(view, R.string.saved_message, Snackbar.LENGTH_SHORT)
                             .setAction("Next", null).show();
-                }
 
+                }
                 proceedToNextScreen();
             }
         });
@@ -69,13 +77,20 @@ public class InfoScreen extends AppCompatActivity {
 
         initializePages();
 
-        container = (RelativeLayout) findViewById(R.id.moca_tests_container);
-        View child = getLayoutInflater().inflate(pageArray[pageIndex],null);
-        container.addView(child);
+        testHandler = new TestHandler(this, session);
 
-        testHandler = new TestHandler(this);
     }
 
+    private void validateTest() {
+        String functionName = "section" + pageIndex;
+        try {
+            Method m = TestHandler.class.getMethod(functionName, null);
+            m.invoke(testHandler);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
     private void initializePages() {
@@ -98,43 +113,63 @@ public class InfoScreen extends AppCompatActivity {
                 R.layout.moca_summary
         };
         pageNameArray = getResources().getStringArray(R.array.pageNameArray);
+
+        container = (RelativeLayout) findViewById(R.id.moca_tests_container);
+
+        for (int i=0; i<pageArray.length; i++) {
+            View child = getLayoutInflater().inflate(pageArray[i],null);
+            container.addView(child);
+            child.setVisibility(View.GONE);
+
+        }
+        container.getChildAt(0).setVisibility(View.VISIBLE);
     }
 
-    private void proceedToScreenLayout(int index) {
-        updateTestName(index);
-        int screen = pageArray[index];
-        container.removeAllViews();
-        View child = getLayoutInflater().inflate(screen ,null);
-        container.addView(child);
-    }
 
     private void updateTestName(int id) {
         TextView tv = (TextView) findViewById(R.id.survey_label);
         String ind = "";
-        System.out.println(pageIndex);
         if (pageIndex > 0 && pageIndex <= 13) {
             ind = (pageIndex) + "/13 - ";
-            System.out.println(">>>>>>>SADA" + pageIndex);
         }
-
         tv.setText(ind + pageNameArray[id]);
     }
 
+
+    private void proceedToPreviousScreen() {
+        if (pageIndex - 1 >= 0) {
+            container.getChildAt(pageIndex).setVisibility(View.GONE);
+            pageIndex -= 1;
+            container.getChildAt(pageIndex).setVisibility(View.VISIBLE);
+
+            updateTestName(pageIndex);
+            fab_forward.setVisibility(View.VISIBLE);
+
+            if (pageIndex == 0) {
+                fab_back.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
     private void proceedToNextScreen() {
+
         if (pageIndex + 1 < pageArray.length) {
+            container.getChildAt(pageIndex).setVisibility(View.GONE);
             pageIndex += 1;
-            proceedToScreenLayout(pageIndex);
+            container.getChildAt(pageIndex).setVisibility(View.VISIBLE);
+
+            updateTestName(pageIndex);
             fab_back.setVisibility(View.VISIBLE);
+
             if (pageIndex == pageArray.length - 1) {
                 summaryScreen();
             }
         }
-
-
-
     }
 
     private void summaryScreen() {
+        session.saveFinalMarks(testHandler.getTestMark());
+
         fab_forward.setVisibility(View.INVISIBLE);
         fab_back.setVisibility(View.INVISIBLE);
         Snackbar.make(fab_back, R.string.summary_screen_message, Snackbar.LENGTH_SHORT)
@@ -146,18 +181,6 @@ public class InfoScreen extends AppCompatActivity {
 
     }
 
-    private void proceedToPreviousScreen() {
-        if (pageIndex - 1 >= 0) {
-            pageIndex -= 1;
-            proceedToScreenLayout(pageIndex);
-            fab_forward.setVisibility(View.VISIBLE);
-
-            if (pageIndex == 0) {
-                fab_back.setVisibility(View.INVISIBLE);
-            }
-        }
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -205,6 +228,11 @@ public class InfoScreen extends AppCompatActivity {
 
             case R.id.action_finish:
                 // User chose the "Settings" item, show the app settings UI...
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
                 goBackHome();
                 return true;
 

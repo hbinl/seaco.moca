@@ -154,6 +154,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     private void loadNextScreen() {
+        System.out.println(xmlHandlerSession.getFilename());
         Intent intent = new Intent(this, InfoScreen.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivityForResult(intent, 0);
