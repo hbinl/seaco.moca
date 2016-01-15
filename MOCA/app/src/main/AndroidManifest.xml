@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".InfoScreen"
-            android:label="@string/title_activity_info_screen"
+            android:label="@string/short_title"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".HomeScreen"
             android:screenOrientation="portrait"

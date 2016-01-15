@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">SEACO MOCA</string>
 
-    <string name="short_title">MOCA</string>
+    <string name="short_title">SEACO MOCA</string>
     <string name="full_title">Montreal Cognitive Assessment</string>
     <string name="assessment_version" translatable="false">0.7</string>
     <string-array name="language_choices">
@@ -39,8 +39,11 @@
         <item>@string/strname_orientation</item>
         <item>@string/summary_message</item>
     </string-array>
+    <string name="moca_overview_summary_text">This test consists of 13 sections. \nPress the Next button on the right to begin.</string>
+    <string name="moca_summary_text">You have successfully completed all the tests. \nClick the Finish button to exit.</string>
+    <string name="moca_visuo_clock_helptext">Draw clock pls</string>
 
-    <string name="strname_overview">Press the Next button on the right to begin.</string>
+    <string name="strname_overview"> </string>
     <string name="strname_ve_node">Visuospatial/Executive: Node</string>
     <string name="strname_ve_cube">Visuospatial/Executive: Cube</string>
     <string name="strname_ve_clock">Visuospatial/Executive: Clock</string>
@@ -54,11 +57,9 @@
     <string name="strname_abstraction">Abstraction</string>
     <string name="strname_delayed_recall">Delayed Recall</string>
     <string name="strname_orientation">Orientation</string>
-    <string name="summary_message">Summary data saved. Click the Finish button to exit.</string>
+    <string name="summary_message">All data saved. </string>
     <string name="saved_message">Data saved. Proceeding to Next Test...</string>
-
-
-    <string name="summary_screen_message">The test has been completed. Data saved successfully.</string>
+    <string name="summary_screen_message">The test has been completed. All data saved successfully.</string>
     <string name="lang_en" translatable="false">English</string>
     <string name="lang_en_code" translatable="false">en</string>
     <string name="lang_ms" translatable="false">Bahasa Melayu</string>

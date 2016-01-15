@@ -63,7 +63,6 @@ public class InfoScreen extends AppCompatActivity {
             }
         });
 
-        //fab_back = (FloatingActionButton) findViewById(R.id.fab_back);
         fab_back.setVisibility(View.INVISIBLE);
 
         initializePages();
@@ -205,7 +204,6 @@ public class InfoScreen extends AppCompatActivity {
             case R.id.action_finish:
                 // User chose the "Settings" item, show the app settings UI...
                 goBackHome();
-
                 return true;
 
 
