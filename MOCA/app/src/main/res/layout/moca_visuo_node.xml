@@ -4,12 +4,36 @@
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
     <TextView
-        android:id="@+id/moca_visuo_clock_helptextview"
+        android:id="@+id/moca_visuo_node_helptextview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/moca_visuo_clock_helptext"
+        android:layout_height="wrap_content"
+        android:text="@string/moca_visuo_node_helptext"
         android:gravity="center"
         android:textSize="20sp"
+        android:paddingTop="30dp"
 
         />
+
+    <RelativeLayout
+        android:layout_below="@id/moca_visuo_node_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cccccc"
+        android:id="@+id/moca_visuo_node_canvas"
+        android:layout_margin="20dp"
+        android:layout_above="@+id/moca_visuo_node_cblayout">
+
+    </RelativeLayout>
+    <TableLayout
+        android:id="@+id/moca_visuo_node_cblayout"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <TableRow>
+            <CheckBox android:id="@+id/moca_visuo_node_cb1" android:text="@string/mark" />
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>

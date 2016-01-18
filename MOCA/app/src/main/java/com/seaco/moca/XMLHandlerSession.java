@@ -10,7 +10,9 @@ import org.w3c.dom.NodeList;
 import java.io.File;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -35,8 +37,15 @@ public class XMLHandlerSession {
     private File file;
     private Node root;
 
+    private long startTime;
+
+    public boolean additionalPointForEducation;
+
+
     public XMLHandlerSession(HashMap<String, String> userData) {
+
         c = Calendar.getInstance();
+        startTime = c.getTimeInMillis();
 
         UUID = generateUUID();
 
@@ -56,17 +65,31 @@ public class XMLHandlerSession {
 
 
     public void saveFinalMarks(int mark) {
+        Element endTime = doc.createElement("TestEndedDateTime");
+        Node val = doc.createTextNode(String.valueOf(getCurrentDateTime()));
+        endTime.appendChild(val);
+
+        Element totalTime = doc.createElement("TotalTimeElapsedInMilliSeconds");
+        String elapsed = String.valueOf(getCurrentDateTimeUTC() - startTime);
+        Node val_time = doc.createTextNode(elapsed);
+        totalTime.appendChild(val_time);
+
         Element finalM = doc.createElement("total-marks");
         Node value = doc.createTextNode(String.valueOf(mark));
         finalM.appendChild(value);
+
         root.appendChild(finalM);
+        root.appendChild(endTime);
+        root.appendChild(totalTime);
 
         writeFile();
     }
 
     public boolean saveTestData(String nodeRoot, HashMap<String, String> map, boolean replace) {
         Element test = doc.createElement(nodeRoot);
-        for (HashMap.Entry<String, String> e : map.entrySet()) {
+
+        Map<String, String> mapx = new TreeMap<String, String>(map);
+        for (Map.Entry<String, String> e : mapx.entrySet()) {
             Node key = doc.createElement(e.getKey());
             Node value = doc.createTextNode(e.getValue());
             key.appendChild(value);
@@ -89,6 +112,11 @@ public class XMLHandlerSession {
         return true;
 
 
+    }
+
+    public long getCurrentDateTimeUTC() {
+        c = Calendar.getInstance();
+        return c.getTimeInMillis();
     }
 
     private void initializeWithInitialUserSessionData(HashMap<String, String> data) {
@@ -143,7 +171,7 @@ public class XMLHandlerSession {
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             DOMSource source = new DOMSource(doc);
             transformer.transform(source, new StreamResult(file));
-            transformer.transform(source, new StreamResult(System.out));
+            //transformer.transform(source, new StreamResult(System.out));
         } catch (Exception e) {
             e.printStackTrace();
         }

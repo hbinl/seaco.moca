@@ -1,6 +1,8 @@
 package com.seaco.moca;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -40,6 +42,7 @@ public class HomeScreen extends AppCompatActivity {
 
     DatePickerDialog.OnDateSetListener dateListener;
     Calendar c;
+    static boolean additionPointForEducation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +64,7 @@ public class HomeScreen extends AppCompatActivity {
             public void onClick(View view) {
                 if (validateForm()) {
                     try {
-                        Thread.sleep(300);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
                         Thread.currentThread().interrupt();
                     }
@@ -80,21 +83,7 @@ public class HomeScreen extends AppCompatActivity {
         for (HashMap.Entry<String, String> e : userData.entrySet()) {
             System.out.println(e.getKey() + " : " + e.getValue());
         }
-
-////         Test Data
-//        HashMap<String, String> map = new HashMap<String,String>();
-//        map.put("time", "1");
-//        map.put("haha", "huhu");
-//        map.put("xls", "sfa");
-//        xmlHandlerSession.saveTestData("visuo", map, true);
-//        map.put("time", "50");
-//        map.put("haha", "huhu");
-//        map.put("xls", "sfa");
-//        xmlHandlerSession.saveTestData("visuo", map, true);
-//        map.put("time", "5");
-//        map.put("haha", "hueehu");
-//        map.put("xls", "sf332a");
-//        xmlHandlerSession.saveTestData("visuo2", map, true);
+        xmlHandlerSession.additionalPointForEducation = additionPointForEducation;
 
     }
 
@@ -106,8 +95,6 @@ public class HomeScreen extends AppCompatActivity {
         } else {
             userData.put("name",nameText);
         }
-
-
 
         return true;
     }
@@ -201,16 +188,26 @@ public class HomeScreen extends AppCompatActivity {
         spinner2.setOnItemSelectedListener((new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i==0) {
-                    userData.put("education","None");
+                if (i == 0) {
+                    userData.put("education", "None");
+                    userData.put("additionalPointForEducation", "false");
+                    additionPointForEducation = false;
                 } else if (i == 1) {
-                    userData.put("education","Primary");
-                }else if (i == 2) {
-                    userData.put("education","Secondary");
-                }else if (i == 3) {
-                    userData.put("education","Tertiary");
-                }else if (i == 4) {
-                    userData.put("education","Other");
+                    userData.put("education", "Primary");
+                    userData.put("additionalPointForEducation", "false");
+                    additionPointForEducation = false;
+                } else if (i == 2) {
+                    userData.put("education", "Secondary");
+                    userData.put("additionalPointForEducation", "true");
+                    additionPointForEducation = true;
+                } else if (i == 3) {
+                    userData.put("education", "Tertiary");
+                    userData.put("additionalPointForEducation", "true");
+                    additionPointForEducation = true;
+                } else if (i == 4) {
+                    userData.put("education", "Other");
+                    userData.put("additionalPointForEducation", "true");
+                    additionPointForEducation = true;
                 }
             }
 
@@ -219,6 +216,7 @@ public class HomeScreen extends AppCompatActivity {
 
             }
         }));
+        spinner2.setSelection(0, true);
     }
 
     private void populateLanguageChoice() {
@@ -290,26 +288,28 @@ public class HomeScreen extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_view:
                 String folderPath = Environment.getExternalStorageDirectory().getPath() + "/SEACO/MOCA/";
-
                 Snackbar.make(this.startButton, "Path: " + folderPath, Snackbar.LENGTH_INDEFINITE)
                         .setAction("Next", null).show();
-
-
                 return true;
 
-            case R.id.action_about:
-                Snackbar.make(this.startButton, getString(R.string.about_app), Snackbar.LENGTH_LONG)
-                        .setAction("Next", null).show();
-                return true;
+//            case R.id.action_about:
+//                Snackbar.make(this.startButton, getString(R.string.about_app), Snackbar.LENGTH_LONG)
+//                        .setAction("Next", null).show();
+//                return true;
+
+            case R.id.action_credits:
+                new AlertDialog.Builder(this)
+                        .setTitle(getString(R.string.screen_menu_credits))
+                        .setMessage(getString(R.string.credit_text))
+                        .setCancelable(true)
+                        .setPositiveButton(getString(R.string.ok), null)
+                        .show();
 
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
-
         }
-
-
     }
 
     @Override

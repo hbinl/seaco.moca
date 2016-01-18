@@ -32,7 +32,8 @@
                     android:gravity="right"
                     android:paddingRight="20dp"/>
                 <EditText
-                    android:id="@+id/moca_orientation_day_field"/>
+                    android:id="@+id/moca_orientation_day_field"
+                    />
                 <CheckBox
                     android:id="@+id/moca_orientation_day_mark"/>
             </TableRow>

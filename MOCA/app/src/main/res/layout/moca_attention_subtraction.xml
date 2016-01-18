@@ -3,13 +3,92 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
+
+
     <TextView
-        android:id="@+id/moca_visuo_clock_helptextview"
+        android:id="@+id/moca_attention_subtraction_helptextview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Remember pls"
+        android:layout_height="wrap_content"
+        android:text="@string/moca_attention_subtraction_helptext"
         android:gravity="center"
         android:textSize="20sp"
 
         />
+
+    <RelativeLayout
+        android:layout_below="@+id/moca_attention_subtraction_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:paddingTop="50dp"
+            android:paddingLeft="150dp"
+            android:paddingStart="150dp"
+            android:paddingRight="150dp"
+            android:paddingEnd="150dp"
+            >
+            <TableRow>
+                <TextView
+                    android:text="@string/moca_attention_subtraction_q1_labeltext"
+                    android:layout_width="80dp"
+                    android:textSize="20sp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"
+                    />
+
+                <CheckBox
+                    android:id="@+id/moca_attention_subtraction_q1_mark"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_attention_subtraction_q2_labeltext"
+                    android:layout_width="80dp"
+                    android:textSize="20sp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+
+                <CheckBox
+                    android:id="@+id/moca_attention_subtraction_q2_mark"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_attention_subtraction_q3_labeltext"
+                    android:layout_width="80dp"
+                    android:textSize="20sp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+
+                <CheckBox
+                    android:id="@+id/moca_attention_subtraction_q3_mark"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_attention_subtraction_q4_labeltext"
+                    android:layout_width="80dp"
+                    android:textSize="20sp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+
+                <CheckBox
+                    android:id="@+id/moca_attention_subtraction_q4_mark"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_attention_subtraction_q5_labeltext"
+                    android:layout_width="80dp"
+                    android:textSize="20sp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+
+                <CheckBox
+                    android:id="@+id/moca_attention_subtraction_q5_mark"/>
+            </TableRow>
+
+
+        </TableLayout>
+    </RelativeLayout>
 </RelativeLayout>

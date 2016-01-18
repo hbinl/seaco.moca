@@ -4,12 +4,56 @@
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
     <TextView
-        android:id="@+id/moca_visuo_clock_helptextview"
+        android:id="@+id/moca_abstraction_helptextview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="abstract pls"
+        android:layout_height="wrap_content"
+        android:text="@string/moca_abstraction_helptext"
         android:gravity="center"
         android:textSize="20sp"
 
         />
+
+    <RelativeLayout
+        android:layout_below="@+id/moca_abstraction_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="60dp"
+            >
+            <TableRow
+                android:paddingBottom="20dp">
+                <TextView
+                    android:text="@string/moca_abstraction_q1_labeltext"
+                    android:layout_width="160dp"
+                    android:textSize="20sp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"
+                    />
+                <EditText
+                    android:id="@+id/moca_abstraction_q1_field"/>
+                <CheckBox
+                    android:id="@+id/moca_abstraction_q1_mark"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:text="@string/moca_abstraction_q2_labeltext"
+                    android:layout_width="80dp"
+                    android:textSize="20sp"
+                    android:gravity="right" android:paddingRight="20dp"/>
+                <EditText
+                    android:id="@+id/moca_abstraction_q2_field"/>
+                <CheckBox
+                    android:id="@+id/moca_abstraction_q2_mark"/>
+            </TableRow>
+
+
+        </TableLayout>
+    </RelativeLayout>
+
 </RelativeLayout>

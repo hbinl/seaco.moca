@@ -4,12 +4,51 @@
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
     <TextView
-        android:id="@+id/moca_visuo_clock_helptextview"
+        android:id="@+id/moca_attention_letters_helptextview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Remember pls"
+        android:layout_height="wrap_content"
+        android:text="@string/moca_attention_letters_helptext"
         android:gravity="center"
         android:textSize="20sp"
 
         />
+
+    <RelativeLayout
+        android:layout_below="@+id/moca_attention_letters_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0"
+            android:padding="15dp"
+            >
+            <TableRow android:gravity="center"
+                android:padding="10dp"
+                android:background="#ffffff">
+                <TextView
+                android:text="@string/moca_attention_letters_q1_labeltext"
+                android:layout_width="160dp"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                />
+
+            </TableRow>
+            <TableRow
+                android:paddingBottom="20dp"
+                android:gravity="center">
+
+
+                <CheckBox
+                    android:text="@string/moca_attention_letters_cb"
+                    android:id="@+id/moca_attention_letters_q1_mark"/>
+            </TableRow>
+
+
+        </TableLayout>
+    </RelativeLayout>
 </RelativeLayout>

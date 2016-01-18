@@ -3,13 +3,57 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
-    <TextView
-        android:id="@+id/moca_visuo_clock_helptextview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Name them pls"
-        android:gravity="center"
-        android:textSize="20sp"
 
-        />
+    <RelativeLayout
+        android:layout_below="@+id/moca_orientation_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="50dp"
+            >
+            <TableRow android:gravity="center">
+            <ImageView android:src="@drawable/moca_camel"
+                android:layout_height="150dp"
+                android:layout_width="150dp"
+/>
+            <EditText
+                android:id="@+id/moca_naming_camel_field"
+                />
+            <CheckBox
+                android:id="@+id/moca_naming_camel_mark"/>
+        </TableRow>
+            <TableRow android:gravity="center">
+                <ImageView android:src="@drawable/moca_lion"
+                    android:layout_height="150dp"
+                    android:layout_width="150dp"/>
+                <EditText
+                    android:id="@+id/moca_naming_lion_field"
+                    />
+                <CheckBox
+                    android:id="@+id/moca_naming_lion_mark"/>
+            </TableRow>
+            <TableRow android:gravity="center"
+                android:id="@+id/moca_naming_var_rhino">
+                <ImageView
+                    android:id="@+id/moca_naming_var"
+                    android:src="@drawable/moca_rhino"
+                    android:layout_height="150dp"
+                    android:layout_width="150dp"/>
+                <EditText
+                    android:id="@+id/moca_naming_var_field"
+                    />
+                <CheckBox
+                    android:id="@+id/moca_naming_var_mark"/>
+            </TableRow>
+
+
+
+        </TableLayout>
+    </RelativeLayout>
 </RelativeLayout>

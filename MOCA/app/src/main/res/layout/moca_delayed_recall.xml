@@ -4,12 +4,164 @@
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
     <TextView
-        android:id="@+id/moca_visuo_clock_helptextview"
+        android:id="@+id/moca_memory_delayed_helptextview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Remember pls"
+        android:layout_height="wrap_content"
+        android:text="@string/moca_memory_delayed_helptext"
         android:gravity="center"
         android:textSize="20sp"
 
         />
+
+    <Chronometer
+        android:layout_below="@+id/moca_memory_delayed_helptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:gravity="center"
+        android:format="%s"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        />
+    <RelativeLayout
+        android:layout_below="@+id/chronometer"
+        android:id="@+id/moca_memory_delayed_tableview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:paddingTop="40dp"
+
+        >
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:padding="20dp"
+
+            >
+            <TableRow
+                android:paddingBottom="20dp"
+
+                >
+                <TextView
+                    android:text=" "
+                    android:layout_width="60dp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+                <TextView
+                    android:text="@string/moca_memory_q1"
+                    android:layout_width="80dp"
+                    android:gravity="center"
+                    android:paddingRight="20dp"/>
+                <TextView
+                    android:text="@string/moca_memory_q2"
+                    android:layout_width="80dp"
+                    android:gravity="center"
+                    android:paddingRight="20dp"/>
+                <TextView
+                    android:text="@string/moca_memory_q3"
+                    android:layout_width="80dp"
+                    android:gravity="center"
+                    android:paddingRight="20dp"/>
+                <TextView
+                    android:text="@string/moca_memory_q4"
+                    android:layout_width="80dp"
+                    android:gravity="center"
+                    android:paddingRight="20dp"/>
+                <TextView
+                    android:text="@string/moca_memory_q5"
+                    android:layout_width="80dp"
+                    android:gravity="center"
+                    android:paddingRight="20dp"/>
+
+            </TableRow>
+            <TableRow android:paddingBottom="10dp">
+                <TextView
+                    android:text="@string/moca_memory_delayed_label1"
+                    android:layout_width="60dp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q1_field1"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q2_field1"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q3_field1"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q4_field1"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q5_field1"/>
+
+            </TableRow>
+            <TableRow android:paddingBottom="30dp">
+                <TextView
+                    android:text=" "
+                    android:layout_width="60dp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+                <CheckBox
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/moca_memory_delayed_q1_mark"/>
+                <CheckBox
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/moca_memory_delayed_q2_mark"/>
+                <CheckBox
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/moca_memory_delayed_q3_mark"/>
+                <CheckBox
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/moca_memory_delayed_q4_mark"/>
+                <CheckBox
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/moca_memory_delayed_q5_mark"/>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="@string/optional"
+                    android:layout_width="80dp"
+                    android:paddingRight="0dp"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="@string/moca_memory_delayed_label2"
+                    android:layout_width="80dp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q1_field2"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q2_field2"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q3_field2"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q4_field2"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q5_field2"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="@string/moca_memory_delayed_label3"
+                    android:layout_width="80dp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q1_field3"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q2_field3"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q3_field3"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q4_field3"/>
+                <EditText
+                    android:id="@+id/moca_memory_delayed_q5_field3"/>
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+
+
 </RelativeLayout>

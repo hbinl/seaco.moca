@@ -4,12 +4,45 @@
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
     <TextView
-        android:id="@+id/moca_visuo_clock_helptextview"
+        android:id="@+id/moca_fluency_helptextview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Remember pls"
+        android:layout_height="wrap_content"
+        android:text="@string/moca_fluency_helptext"
         android:gravity="center"
         android:textSize="20sp"
-
+        android:paddingBottom="30dp"
         />
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/moca_fluency_helptextview"
+        >
+        <EditText
+            android:id="@+id/moca_fluency_field"
+            android:background="#ffffff"
+
+            android:inputType="textMultiLine"
+            android:layout_margin="50dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="300dp"
+            android:gravity="left"
+
+            />
+        <TableRow
+            android:layout_below="@id/moca_fluency_field"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center">
+            <CheckBox
+                android:layout_marginLeft="50dp"
+                android:layout_gravity="center"
+                android:id="@+id/moca_fluency_mark"
+                android:text="N >= 11 words"/>
+        </TableRow>
+    </RelativeLayout>
+
 </RelativeLayout>

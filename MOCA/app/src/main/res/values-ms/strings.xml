@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="assessment_version" translatable="false"></string>
     <string name="full_title">Montreal Cognitive Assessment</string>
     <string name="short_title">Pengujian MOCA</string>
     <string name="main_start">Mula</string>
@@ -44,4 +43,51 @@
     <string name="saved_message">Data disimpan. Teruskan...</string>
     <string name="moca_overview_summary_text">Ujian ini mengandungi 13 bahagian. \n Tekan Next untuk mula.</string>
     <string name="moca_summary_text">Pengujian ini telah tamat. \nTekan butang Tamat untuk menamatkan ujian.</string>
+    <string name="screen_menu_credits">Mengenai</string>
+    <string name="begin">Mula</string>
+    <string name="contour">Kontur</string>
+    <string name="end">Tamat</string>
+    <string name="hands">Jarum-jarum</string>
+    <string name="moca_abstraction_helptext">Persamaan antara, misalnya, pisang-oren=buah</string>
+    <string name="moca_abstraction_q1_labeltext">kereta api-basikal</string>
+    <string name="moca_abstraction_q2_labeltext">jam tangan-pembaris</string>
+    <string name="moca_attention_digits_helptext">Bacakan senarai digit (1 digit/saat)</string>
+    <string name="moca_attention_digits_q1_labeltext">Yang dinilai mengulanginya mengikut uruan ke depan: 2 1 8 5 4</string>
+    <string name="moca_attention_digits_q2_labeltext">Yang dinilai mengulanginya mengikut uruan ke belakang: 7 4 2</string>
+    <string name="moca_attention_letters_cb">1 mata untuk kesilapan ≤2</string>
+    <string name="moca_attention_letters_helptext">Bacakan senarai huruf, orang yang dinilai mesti mengetuk dengan tanganya pada setiap huruf A.</string>
+    <string name="moca_attention_letters_q1_labeltext">F B A C M N A A J K L B A F A K D E A A A J A M O F A A B</string>
+    <string name="moca_attention_subtraction_helptext">Menolak 7 secara bersiri mula dengan 100. \n     \n \n     4 or 5 betul: 3 pts \n     2 or 3 betul: 2 pts \n     1 betul: 1 pt \n     0 betul: 0 pt</string>
+    <string name="moca_attention_subtraction_q1_labeltext">93</string>
+    <string name="ok">OK</string>
+    <string name="moca_visuo_node_helptext">Menyambung titik.</string>
+    <string name="number">Nombor-nombor</string>
+    <string name="optional">Tidak diwajibkan</string>
+    <string name="moca_visuo_clock_helptext">Lukis JAM: \n (pukul sebelas sepuluh minit)</string>
+    <string name="moca_visuo_cube_helptext">Salin kiub.</string>
+    <string name="moca_orientation_year">Tahun</string>
+    <string name="moca_orientation_weekday">Hari</string>
+    <string name="moca_orientation_day">Tarikh</string>
+    <string name="moca_orientation_helptext">Sila menjawab soalan berikut.</string>
+    <string name="moca_orientation_month">Bulan</string>
+    <string name="moca_orientation_place">Tempat</string>
+    <string name="moca_orientation_city">Bandaraya</string>
+    <string name="moca_memory_q5">MERAH</string>
+    <string name="moca_memory_q4">BUNGA DAISI</string>
+    <string name="moca_memory_q3">GEREJA</string>
+    <string name="moca_memory_q2">BALDU</string>
+    <string name="moca_memory_q1">MUKA</string>
+    <string name="moca_memory_label1">Cuba 1</string>
+    <string name="moca_memory_label2">Cuba 2</string>
+    <string name="moca_memory_helptext">Bacakan senarai perkaataan, yang dinilai mesti mengulanginya. Lakukan 2 percubaan. \n Lakukan ingatan kembali selepas 5 minit.</string>
+    <string name="moca_memory_delayed_label3">Pelbagai Pilihan</string>
+    <string name="moca_memory_delayed_label2">Kategori</string>
+    <string name="moca_memory_delayed_label1">Tanpa Pembayang</string>
+    <string name="moca_memory_delayed_helptext">Ingatan Kembali Yang Tertunda, mata dibagikan untuk TANPA PEMBAYANG sahaja.</string>
+    <string name="moca_language_repeat_q2_labeltext">Kucing selalu menyorok di bawah kerusi bila anjing berada dalam bilik.</string>
+    <string name="moca_language_repeat_q1_labeltext">Saya cuma tahu bahawa John ialah orang yang ditolong.</string>
+    <string name="moca_language_repeat_helptext">Ulang:</string>
+    <string name="moca_fluency_helptext">Namakan bilangan maksimum perkataan dalam satu minit yang bermula dengan huruf A.</string>
+    <string name="assessment_version">0.7</string>
+    <string name="mark">1 Markah</string>
 </resources>

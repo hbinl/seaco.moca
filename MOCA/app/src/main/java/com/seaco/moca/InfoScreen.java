@@ -20,10 +20,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.lang.reflect.Method;
+import java.util.Calendar;
 
 public class InfoScreen extends AppCompatActivity {
 
@@ -38,6 +41,10 @@ public class InfoScreen extends AppCompatActivity {
     FloatingActionButton fab_back;
     Menu menu_ref;
     static XMLHandlerSession session;
+    long sectionStartTime;
+    int localeInt;
+    public static boolean moca_naming_flag;
+
 
     public static int getPageIndex() {
         return pageIndex;
@@ -45,7 +52,10 @@ public class InfoScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        localeInt = HomeScreen.localeInt;
         session = HomeScreen.xmlHandlerSession;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -56,6 +66,8 @@ public class InfoScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 proceedToPreviousScreen();
+                variabilityCheck();
+
             }
         });
 
@@ -65,11 +77,9 @@ public class InfoScreen extends AppCompatActivity {
             public void onClick(View view) {
                 if (pageIndex != 0 && pageIndex < (pageArray.length - 1)) {
                     validateTest();
-                    Snackbar.make(view, R.string.saved_message, Snackbar.LENGTH_SHORT)
-                            .setAction("Next", null).show();
-
                 }
                 proceedToNextScreen();
+                variabilityCheck();
             }
         });
 
@@ -81,11 +91,27 @@ public class InfoScreen extends AppCompatActivity {
 
     }
 
+    private void variabilityCheck() {
+        if (pageIndex == 4) {
+            ImageView iv = (ImageView) findViewById(R.id.moca_naming_var);
+            if (localeInt == 2) {
+                iv.setImageResource(R.drawable.moca_elephant);
+                moca_naming_flag = true;
+            } else {
+                iv.setImageResource(R.drawable.moca_rhino);
+                moca_naming_flag = false;
+            }
+        }
+
+
+
+    }
+
     private void validateTest() {
         String functionName = "section" + pageIndex;
         try {
-            Method m = TestHandler.class.getMethod(functionName, null);
-            m.invoke(testHandler);
+            Method m = TestHandler.class.getMethod(functionName, long.class);
+            m.invoke(testHandler, sectionStartTime);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -127,6 +153,7 @@ public class InfoScreen extends AppCompatActivity {
 
 
     private void updateTestName(int id) {
+        sectionStartTime = Calendar.getInstance().getTimeInMillis();
         TextView tv = (TextView) findViewById(R.id.survey_label);
         String ind = "";
         if (pageIndex > 0 && pageIndex <= 13) {

@@ -5,8 +5,12 @@
         android:title="@string/screen_menu_view_files"
         app:showAsAction="never"
         />
-    <item android:id="@+id/action_about"
-        android:title="@string/screen_menu_about"
+    <!--<item android:id="@+id/action_about"-->
+    <!--android:title="@string/screen_menu_about"-->
+    <!--app:showAsAction="never"-->
+    <!--/>-->
+    <item android:id="@+id/action_credits"
+        android:title="@string/screen_menu_credits"
         app:showAsAction="never"
         />
 </menu>
