@@ -1,5 +1,6 @@
 package com.seaco.moca;
 
+import android.graphics.Bitmap;
 import android.os.Environment;
 
 import org.w3c.dom.Document;
@@ -8,6 +9,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +32,7 @@ public class XMLHandlerSession {
 
     private static String UUID;
     private static String filename;
+    private static String dirpath;
     private static String filepath;
     private static HashMap<String, String> sessionData;
     private Calendar c;
@@ -41,22 +45,25 @@ public class XMLHandlerSession {
 
     public boolean additionalPointForEducation;
 
+    public int localeInt;
 
-    public XMLHandlerSession(HashMap<String, String> userData) {
 
+    public XMLHandlerSession(HashMap<String, String> userData, int lang) {
+
+        localeInt = lang;
         c = Calendar.getInstance();
         startTime = c.getTimeInMillis();
 
         UUID = generateUUID();
 
         filename = generateFileName();
-        String dirpath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SEACO/MOCA/";
+        dirpath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SEACO/MOCA/";
         File dir = new File(dirpath);
         if(!dir.exists() && !dir.isDirectory()) {
             dir.mkdirs();
         }
         filepath = dirpath + filename;
-        System.out.println(filepath);
+        //System.out.println(filepath);
         createFile();
 
         root = doc.getFirstChild();
@@ -94,7 +101,7 @@ public class XMLHandlerSession {
             Node value = doc.createTextNode(e.getValue());
             key.appendChild(value);
             test.appendChild(key);
-            System.out.println(e.getKey() + " : " + e.getValue());
+            //System.out.println(e.getKey() + " : " + e.getValue());
         }
         Node tests = doc.getElementsByTagName("moca-tests").item(0);
 
@@ -127,7 +134,7 @@ public class XMLHandlerSession {
             Node value = doc.createTextNode(e.getValue());
             key.appendChild(value);
             subject.appendChild(key);
-            System.out.println(e.getKey() + " : " + e.getValue());
+            //System.out.println(e.getKey() + " : " + e.getValue());
         }
         Node key = doc.createElement("TestStartedDateTime");
         Node dt = doc.createTextNode(getCurrentDateTime());
@@ -144,10 +151,10 @@ public class XMLHandlerSession {
 
     private void createFile() {
         try {
-            System.out.println("Start");
+            //System.out.println("Start");
             file = new File(filepath);
             boolean fileCreated = file.createNewFile();
-            System.out.println(fileCreated);
+            //System.out.println(fileCreated);
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -179,7 +186,7 @@ public class XMLHandlerSession {
     }
 
     private String generateFileName() {
-        return getCurrentDateTime() + "_" + UUID + ".xml";
+        return UUID + "_" + getCurrentDateTime() + ".xml";
     }
 
     public String getFilename() {
@@ -213,5 +220,16 @@ public class XMLHandlerSession {
         return UUID;
     }
 
+    public void saveImage(Bitmap bmap, String name) {
+        String path = dirpath + filename + "_image_" + name + ".jpg";
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            bmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+    }
 }

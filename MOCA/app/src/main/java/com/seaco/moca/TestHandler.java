@@ -31,6 +31,7 @@ public class TestHandler {
         activity = _activity;
         session = _session;
         container = (RelativeLayout) activity.findViewById(R.id.moca_tests_container);
+        System.out.println(testMark);
     }
 
     public int getTestMark() {
@@ -38,19 +39,106 @@ public class TestHandler {
     }
 
     public void section1(long startTime) {
-        System.out.println(1);
+
+        int sectionMark = 0;
+        View section = container.getChildAt(1);
+        HashMap<String, String> map = new HashMap<String, String>();
+        CheckBox cb;
+        int[] cbArray = {R.id.moca_visuo_node_cb1};
+        String[] cbMapKey = {"node-mark"};
+
+        for (int i=0; i<cbArray.length; i++) {
+            cb = (CheckBox) section.findViewById(cbArray[i]);
+            map.put(cbMapKey[i], String.valueOf(cb.isChecked()));
+            if (cb.isChecked()) {
+                sectionMark += 1;
+            }
+        }
+
+        DrawCanvas canvas = (DrawCanvas) activity.findViewById(R.id.node_canvas);
+        String strokeTimes = canvas.getStrokeTimes().toString();
+        map.put("strokeTimesInMilliSeconds", strokeTimes);
+        String points = canvas.getPoints().toString();
+        map.put("pointsInXYPair", points);
+
+        testMark += sectionMark;
+        map.put("section-mark",String.valueOf(sectionMark));
+        String imgname = session.getFilename() + "_image_visuonode.jpg";
+        map.put("image", imgname);
+        session.saveTestData("visuo-node", map, true);
+
+        ((DrawCanvas) activity.findViewById(R.id.node_canvas)).saveImageIntoSessionWithOverlay(session, "visuonode");
+
+        System.out.println(testMark);
     }
 
     public void section2(long startTime) {
-        System.out.println(2);
+                int sectionMark = 0;
+        View section = container.getChildAt(2);
+        HashMap<String, String> map = new HashMap<String, String>();
+
+        CheckBox cb;
+
+        int[] cbArray = {R.id.moca_visuo_cube_cb1};
+
+
+        String[] cbMapKey = {"cube-mark"};
+
+        for (int i=0; i<cbArray.length; i++) {
+            cb = (CheckBox) section.findViewById(cbArray[i]);
+            map.put(cbMapKey[i], String.valueOf(cb.isChecked()));
+            if (cb.isChecked()) {
+                sectionMark += 1;
+            }
+        }
+
+        testMark += sectionMark;
+        map.put("section-mark",String.valueOf(sectionMark));
+
+        String imgname = session.getFilename() + "_image_visuocube.jpg";
+        map.put("image", imgname);
+        session.saveTestData("visuo-cube", map, true);
+
+        ((DrawCanvas) activity.findViewById(R.id.cube_canvas)).saveImageIntoSession(session, "visuocube");System.out.println(testMark);
     }
 
     public void section3(long startTime) {
-        System.out.println(3);
+                int sectionMark = 0;
+        View section = container.getChildAt(3);
+        HashMap<String, String> map = new HashMap<String, String>();
+
+        CheckBox cb;
+
+        int[] cbArray = {
+                R.id.moca_visuo_clock_cb1, R.id.moca_visuo_clock_cb2, R.id.moca_visuo_clock_cb3
+        };
+
+
+        String[] cbMapKey = {
+                "contour-mark", "number-mark", "hands-mark"
+        };
+
+
+        for (int i=0; i<cbArray.length; i++) {
+            cb = (CheckBox) section.findViewById(cbArray[i]);
+            map.put(cbMapKey[i], String.valueOf(cb.isChecked()));
+            if (cb.isChecked()) {
+                sectionMark += 1;
+            }
+        }
+
+        testMark += sectionMark;
+        String imgname = session.getFilename() + "_image_visuoclock.jpg";
+        map.put("image", imgname);
+
+        map.put("section-mark", String.valueOf(sectionMark));
+        session.saveTestData("visuo-clock", map, true);
+
+        ((DrawCanvas) activity.findViewById(R.id.clock_canvas)).saveImageIntoSession(session, "visuoclock");System.out.println(testMark);
+
     }
 
     public void section4(long startTime) {
-        System.out.println(4);
 
         int sectionMark = 0;
 
@@ -95,14 +183,13 @@ public class TestHandler {
 
         testMark += sectionMark;
         map4.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("naming", map4, true);
+        session.saveTestData("naming", map4, true);System.out.println(testMark);
     }
 
 
 
     public void section5(long startTime) {
-        System.out.println(5);
-        View section = container.getChildAt(5);
+                View section = container.getChildAt(5);
         HashMap<String, String> map = new HashMap<String, String>();
 
         section5Watch = (Chronometer) container.getChildAt(12).findViewById(R.id.chronometer);
@@ -139,11 +226,10 @@ public class TestHandler {
         }
 
         map.put("section-mark","None");
-        session.saveTestData("memory", map, true);
+        session.saveTestData("memory", map, true);System.out.println(testMark);
     }
 
     public void section6(long startTime) {
-        System.out.println(6);
 
         int sectionMark = 0;
 
@@ -173,10 +259,10 @@ public class TestHandler {
 
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("attention-digits", map, true);
+        session.saveTestData("attention-digits", map, true);System.out.println(testMark);
     }
+
     public void section7(long startTime) {
-        System.out.println(7);
 
 
         int sectionMark = 0;
@@ -207,11 +293,10 @@ public class TestHandler {
 
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("attention-letters", map, true);
+        session.saveTestData("attention-letters", map, true);System.out.println(testMark);
     }
 
     public void section8(long startTime) {
-        System.out.println(8);
 
 
         int sectionMark = 0;
@@ -238,8 +323,7 @@ public class TestHandler {
         for (int i=0; i<cbArray.length; i++) {
 
             cb = (CheckBox) section.findViewById(cbArray[i]);
-            System.out.println(i);
-            map.put(cbMapKey[i], String.valueOf(cb.isChecked()));
+                        map.put(cbMapKey[i], String.valueOf(cb.isChecked()));
             if (cb.isChecked()) {
                 sectionMark += 1;
             }
@@ -253,11 +337,10 @@ public class TestHandler {
 
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("attention-subtraction", map, true);
+        session.saveTestData("attention-subtraction", map, true);System.out.println(testMark);
     }
 
     public void section9(long startTime) {
-        System.out.println(9);
 
         int sectionMark = 0;
 
@@ -288,11 +371,11 @@ public class TestHandler {
 
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("lang-repeat", map, true);
+        session.saveTestData("lang-repeat", map, true);System.out.println(testMark);
     }
 
     public void section10(long startTime) {
-        System.out.println(10);
+
 
         int sectionMark = 0;
 
@@ -331,11 +414,11 @@ public class TestHandler {
 
         testMark += sectionMark;
         map10.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("lang-fluency", map10, true);
+        session.saveTestData("lang-fluency", map10, true);System.out.println(testMark);
     }
 
     public void section11(long startTime) {
-        System.out.println(11);
+
         int sectionMark = 0;
 
         View section = container.getChildAt(11);
@@ -373,11 +456,11 @@ public class TestHandler {
 
         testMark += sectionMark;
         map11.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("abstraction", map11, true);
+        session.saveTestData("abstraction", map11, true);System.out.println(testMark);
     }
 
     public void section12(long startTime) {
-        System.out.println(12);
+
 
         int sectionMark = 0;
         View section = container.getChildAt(12);
@@ -428,6 +511,7 @@ public class TestHandler {
 
         }
 
+        testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
         session.saveTestData("memory-delayed", map, true);
 
@@ -451,17 +535,18 @@ public class TestHandler {
                 "q1-input3", "q2-input3", "q3-input3", "q4-input3", "q5-input3"
         };
 
+        map = new HashMap<String, String>();
         for (int i=0; i<optionalDataArray.length; i++) {
             map.put(optionalDataMapKey[i], ((EditText) section.findViewById(optionalDataArray[i]))
                     .getText().toString());
         }
 
-        session.saveTestData("memory-delayed-optionals", map, true);
+        session.saveTestData("memory-delayed-optionals", map, true);System.out.println(testMark);
     }
 
     public void section13(long startTime) {
 
-        System.out.println(13);
+
         int sectionMark = 0;
 
         View section = container.getChildAt(13);
@@ -504,6 +589,6 @@ public class TestHandler {
 
         testMark += sectionMark;
         map13.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("orientation", map13, true);
+        session.saveTestData("orientation", map13, true);System.out.println(testMark);
     }
 }

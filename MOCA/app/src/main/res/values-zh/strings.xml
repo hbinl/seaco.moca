@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="full_title">Montreal Cognitive Assessment 测试</string>
-    <string name="short_title">MOCA 测试</string>
     <string name="main_start">开始</string>
     <string name="screen_menu_quit">停止</string>
     <string name="confirm_exit_title">肯定停止测试？</string>
@@ -87,7 +86,8 @@
     <string name="moca_attention_digits_q2_labeltext">受测对象必须把数字向后重复：7 4 2</string>
     <string name="moca_language_repeat_q1_labeltext">我只知道今天阿明会帮我。</string>
     <string name="moca_orientation_helptext">请回答以下问题。</string>
-    <string name="assessment_version" translatable="false">0.7</string>
-    <string name="moca_attention_subtraction_q1_labeltext" translatable="false">93</string>
     <string name="mark">1分</string>
+    <string name="clear">清除</string>
+    <string name="eraser">橡皮擦</string>
+    <string name="pen">铅笔</string>
 </resources>

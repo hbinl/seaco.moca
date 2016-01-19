@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
     android:background="#ededed">
     <TextView
         android:id="@+id/moca_visuo_clock_helptextview"
@@ -17,11 +20,47 @@
         android:layout_below="@id/moca_visuo_clock_helptextview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#cccccc"
+        android:background="#ffffff"
         android:id="@+id/moca_visuo_clock_canvas"
         android:layout_margin="20dp"
         android:layout_above="@+id/moca_visuo_clock_cblayout">
 
+        <com.seaco.moca.DrawCanvas
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:id="@+id/clock_canvas"
+            />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:stretchColumns="*">
+            <TableRow>
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pen"
+                    android:id="@+id/clock_pen"
+                    />
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/clock_pen"
+                    android:text="@string/eraser"
+                    android:id="@+id/clock_eraser"/>
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/clock_eraser"
+                    android:text="@string/clear"
+                    android:id="@+id/clock_clear"
+                    /></TableRow>
+        </TableLayout>
     </RelativeLayout>
     <TableLayout
         android:id="@+id/moca_visuo_clock_cblayout"

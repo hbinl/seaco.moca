@@ -63,11 +63,6 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (validateForm()) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException ex) {
-                        Thread.currentThread().interrupt();
-                    }
                     createSession();
                     loadNextScreen();
                 }
@@ -79,7 +74,7 @@ public class HomeScreen extends AppCompatActivity {
 
 
     private void createSession() {
-        xmlHandlerSession = new XMLHandlerSession(userData);
+        xmlHandlerSession = new XMLHandlerSession(userData, localeInt);
         for (HashMap.Entry<String, String> e : userData.entrySet()) {
             System.out.println(e.getKey() + " : " + e.getValue());
         }

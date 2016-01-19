@@ -20,15 +20,52 @@
         android:layout_below="@id/moca_visuo_cube_helptextview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#cccccc"
-        android:id="@+id/moca_visuo_clock_canvas"
+        android:background="#ededed"
+        android:id="@+id/moca_visuo_cube_canvas"
         android:layout_margin="20dp"
         android:layout_above="@+id/moca_visuo_cube_cblayout">
         <ImageView
+            android:layout_alignParentTop="true"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:src="@drawable/cube"
             android:id="@+id/moca_cube"/>
+        <com.seaco.moca.DrawCanvas
+            android:layout_below="@+id/moca_cube"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:id="@+id/cube_canvas"
+            />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:stretchColumns="*">
+            <TableRow>
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pen"
+                    android:id="@+id/cube_pen"
+                    />
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cube_pen"
+                    android:text="@string/eraser"
+                    android:id="@+id/cube_eraser"/>
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cube_eraser"
+                    android:text="@string/clear"
+                    android:id="@+id/cube_clear"
+                    /></TableRow>
+        </TableLayout>
     </RelativeLayout>
     <TableLayout
         android:id="@+id/moca_visuo_cube_cblayout"

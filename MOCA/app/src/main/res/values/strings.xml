@@ -1,7 +1,9 @@
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation" >
     <string name="app_name" translatable="false">SEACO MOCA</string>
 
-    <string name="short_title">SEACO MOCA</string>
+    <string name="short_title" translatable="false">SEACO MOCA</string>
     <string name="full_title">Montreal Cognitive Assessment</string>
     <string name="assessment_version">0.7</string>
     <string-array name="language_choices">
@@ -171,4 +173,7 @@
     <string name="begin">Begin</string>
     <string name="end">End</string>
     <string name="mark">1 Mark</string>
+    <string name="pen">Pen</string>
+    <string name="eraser">Eraser</string>
+    <string name="clear">Clear</string>
 </resources>

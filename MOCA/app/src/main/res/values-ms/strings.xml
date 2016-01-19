@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="full_title">Montreal Cognitive Assessment</string>
-    <string name="short_title">Pengujian MOCA</string>
     <string name="main_start">Mula</string>
     <string name="screen_menu_quit">Tamat</string>
     <string name="confirm_exit_message">Pastikah anda nak tamat? Semua progress akan hilang.</string>
@@ -58,7 +57,6 @@
     <string name="moca_attention_letters_helptext">Bacakan senarai huruf, orang yang dinilai mesti mengetuk dengan tanganya pada setiap huruf A.</string>
     <string name="moca_attention_letters_q1_labeltext">F B A C M N A A J K L B A F A K D E A A A J A M O F A A B</string>
     <string name="moca_attention_subtraction_helptext">Menolak 7 secara bersiri mula dengan 100. \n     \n \n     4 or 5 betul: 3 pts \n     2 or 3 betul: 2 pts \n     1 betul: 1 pt \n     0 betul: 0 pt</string>
-    <string name="moca_attention_subtraction_q1_labeltext">93</string>
     <string name="ok">OK</string>
     <string name="moca_visuo_node_helptext">Menyambung titik.</string>
     <string name="number">Nombor-nombor</string>
@@ -88,6 +86,8 @@
     <string name="moca_language_repeat_q1_labeltext">Saya cuma tahu bahawa John ialah orang yang ditolong.</string>
     <string name="moca_language_repeat_helptext">Ulang:</string>
     <string name="moca_fluency_helptext">Namakan bilangan maksimum perkataan dalam satu minit yang bermula dengan huruf A.</string>
-    <string name="assessment_version">0.7</string>
     <string name="mark">1 Markah</string>
+    <string name="eraser">Pemadam</string>
+    <string name="pen">Pen</string>
+    <string name="clear">Memadam Semua</string>
 </resources>

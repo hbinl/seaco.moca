@@ -4,7 +4,7 @@
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
     <TextView
-        android:id="@+id/moca_memory_delayed_helptextview"
+        android:id="@+id/moca_memory_helptextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/moca_memory_delayed_helptext"

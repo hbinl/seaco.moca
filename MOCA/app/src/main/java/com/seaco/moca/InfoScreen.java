@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.net.Uri;
 
 import android.content.DialogInterface;
@@ -20,6 +21,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -102,6 +104,14 @@ public class InfoScreen extends AppCompatActivity {
                 moca_naming_flag = false;
             }
         }
+        if (pageIndex == 1) {
+            ImageView ivx = (ImageView) findViewById(R.id.moca_visuo_node_img);
+            if (localeInt == 2) {
+                ivx.setImageResource(R.drawable.moca_visuo_cn);
+            } else if (localeInt == 1) {
+                ivx.setImageResource(R.drawable.moca_visuo_ms);
+            }
+        }
 
 
 
@@ -149,6 +159,115 @@ public class InfoScreen extends AppCompatActivity {
 
         }
         container.getChildAt(0).setVisibility(View.VISIBLE);
+
+        setDrawingTools();
+
+
+    }
+
+    private void setDrawingTools() {
+        // Clock
+        Button clock_pen_btn = (Button) findViewById(R.id.clock_pen);
+        clock_pen_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.clock_canvas);
+                canvas.setPaint();
+                view.setBackgroundColor(0xFF5599CC);
+                ((Button) findViewById(R.id.clock_eraser)).setBackgroundColor(0xFFAAAAAA);
+            }
+        });
+        clock_pen_btn.callOnClick();
+
+        Button clock_eraser_btn = (Button) findViewById(R.id.clock_eraser);
+        clock_eraser_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.clock_canvas);
+                canvas.setErase();
+                view.setBackgroundColor(0xFF5599CC);
+                ((Button) findViewById(R.id.clock_pen)).setBackgroundColor(0xFFAAAAAA);
+            }
+        });
+
+        Button clock_clear_btn = (Button) findViewById(R.id.clock_clear);
+        ((Button) findViewById(R.id.clock_clear)).setBackgroundColor(0xFFAAAAAA);
+        clock_clear_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.clock_canvas);
+                canvas.clear();
+            }
+        });
+
+        // Cube
+        Button cube_pen_btn = (Button) findViewById(R.id.cube_pen);
+        cube_pen_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.cube_canvas);
+                canvas.setPaint();
+                view.setBackgroundColor(0xFF5599CC);
+                ((Button) findViewById(R.id.cube_eraser)).setBackgroundColor(0xFFAAAAAA);
+            }
+        });
+        cube_pen_btn.callOnClick();
+
+        Button cube_eraser_btn = (Button) findViewById(R.id.cube_eraser);
+        cube_eraser_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.cube_canvas);
+                canvas.setErase();
+                view.setBackgroundColor(0xFF5599CC);
+                ((Button) findViewById(R.id.cube_pen)).setBackgroundColor(0xFFAAAAAA);
+            }
+        });
+
+        Button cube_clear_btn = (Button) findViewById(R.id.cube_clear);
+        ((Button) findViewById(R.id.cube_clear)).setBackgroundColor(0xFFAAAAAA);
+        cube_clear_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.cube_canvas);
+                canvas.clear();
+            }
+        });
+
+        // Node
+        Button node_pen_btn = (Button) findViewById(R.id.node_pen);
+        node_pen_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.node_canvas);
+                canvas.setPaint();
+                canvas.setColor(0xFF2222FF);
+                view.setBackgroundColor(0xFF5599CC);
+                ((Button) findViewById(R.id.node_eraser)).setBackgroundColor(0xFFAAAAAA);
+            }
+        });
+        node_pen_btn.callOnClick();
+
+        Button node_eraser_btn = (Button) findViewById(R.id.node_eraser);
+        node_eraser_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.node_canvas);
+                canvas.setErase();
+                view.setBackgroundColor(0xFF5599CC);
+                ((Button) findViewById(R.id.node_pen)).setBackgroundColor(0xFFAAAAAA);
+            }
+        });
+
+        Button node_clear_btn = (Button) findViewById(R.id.node_clear);
+        ((Button) findViewById(R.id.node_clear)).setBackgroundColor(0xFFAAAAAA);
+        node_clear_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawCanvas canvas = (DrawCanvas) findViewById(R.id.node_canvas);
+                canvas.clear();
+            }
+        });
     }
 
 

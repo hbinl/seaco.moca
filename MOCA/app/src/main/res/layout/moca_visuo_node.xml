@@ -18,12 +18,51 @@
         android:layout_below="@id/moca_visuo_node_helptextview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#cccccc"
+        android:background="#ffffff"
         android:id="@+id/moca_visuo_node_canvas"
         android:layout_margin="20dp"
         android:layout_above="@+id/moca_visuo_node_cblayout">
+        <com.seaco.moca.DrawCanvas
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/node_canvas"/>
+        <ImageView
+            android:id="@+id/moca_visuo_node_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/moca_visuo_en"/>
 
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:stretchColumns="*">
+            <TableRow>
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pen"
+                    android:id="@+id/node_pen"
+                    />
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/node_pen"
+                    android:text="@string/eraser"
+                    android:id="@+id/node_eraser"/>
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/node_eraser"
+                    android:text="@string/clear"
+                    android:id="@+id/node_clear"
+                    /></TableRow>
+        </TableLayout>
     </RelativeLayout>
+
     <TableLayout
         android:id="@+id/moca_visuo_node_cblayout"
         android:paddingLeft="20dp"
