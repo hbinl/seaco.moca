@@ -40,14 +40,27 @@
             </TableRow>
             <TableRow
                 android:paddingBottom="20dp"
-                android:gravity="center">
-
-
+                android:gravity="left">
                 <CheckBox
                     android:text="@string/moca_attention_letters_cb"
                     android:id="@+id/moca_attention_letters_q1_mark"/>
-            </TableRow>
+                <TextView android:text="@string/moca_attention_letters_correct_label"
+                    android:layout_width="wrap_content"/>
+                <EditText
+                    android:minWidth="40dp"
+                    android:id="@+id/moca_attention_letters_num_correct"/>
 
+            </TableRow>
+            <TableRow
+                android:paddingBottom="20dp"
+                android:gravity="center">
+
+
+
+            </TableRow>
+            <TableRow>
+                <CheckBox android:id="@+id/moca_attention_letters_completed" android:text="@string/completed" />
+            </TableRow>
 
         </TableLayout>
     </RelativeLayout>

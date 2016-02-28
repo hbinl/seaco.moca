@@ -19,7 +19,27 @@
         android:gravity="center"
         android:layout_below="@+id/moca_fluency_helptextview"
         >
+
+        <Chronometer
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chronometer_10"
+            android:gravity="center"
+            android:format="%s"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            />
+        <Button
+            android:layout_below="@+id/chronometer_10"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/start_record"
+            android:id="@+id/chronometer_10_startstop"
+        />
+
         <EditText
+            android:layout_below="@+id/chronometer_10_startstop"
             android:id="@+id/moca_fluency_field"
             android:background="#ffffff"
 
@@ -30,6 +50,7 @@
             android:layout_height="wrap_content"
             android:maxHeight="300dp"
             android:gravity="left"
+            android:hint="@string/optional_type_here"
 
             />
         <TableRow
@@ -42,7 +63,9 @@
                 android:layout_gravity="center"
                 android:id="@+id/moca_fluency_mark"
                 android:text="N >= 11 words"/>
+            <CheckBox android:id="@+id/moca_fluency_completed" android:text="@string/completed" />
         </TableRow>
+
     </RelativeLayout>
 
 </RelativeLayout>

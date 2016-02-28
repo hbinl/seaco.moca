@@ -73,6 +73,7 @@
         android:layout_alignParentBottom="true">
         <TableRow>
             <CheckBox android:id="@+id/moca_visuo_node_cb1" android:text="@string/mark" />
+            <CheckBox android:id="@+id/moca_visuo_node_completed" android:text="@string/completed" />
         </TableRow>
     </TableLayout>
 </RelativeLayout>

@@ -40,7 +40,7 @@
     <string name="summary_message">Data telah disimpan. Anda boleh tamat.</string>
     <string name="summary_screen_message">Pengujian telah dijalankan dengan berjaya.</string>
     <string name="saved_message">Data disimpan. Teruskan...</string>
-    <string name="moca_overview_summary_text">Ujian ini mengandungi 13 bahagian. \n Tekan Next untuk mula.</string>
+    <string name="moca_overview_summary_text">Penilaian Kognitif Montreal (Montreal Cognitive Assessment – “MoCA”) telah direka bentuk sebagai alat penyaringan yang pantas untuk mengesan disfungsi kognitif ringan. MoCA menilai pelbagai domain kognitif: perhatian dan daya tumpu, fungsi eksekutif, ingatan, bahasa, kemahiran pandang bina, pemikiran berkonsep, penghitungan, dan orientasi. Masa untuk menjalankan MoCA ialah kira-kira 10 minit. Jumlah markah yang boleh diperoleh ialah 30 mata; markah sebanyak 26 ke atas dianggap sebagai normal. \n\n Tekan Next untuk mula.</string>
     <string name="moca_summary_text">Pengujian ini telah tamat. \nTekan butang Tamat untuk menamatkan ujian.</string>
     <string name="screen_menu_credits">Mengenai</string>
     <string name="begin">Mula</string>
@@ -58,11 +58,11 @@
     <string name="moca_attention_letters_q1_labeltext">F B A C M N A A J K L B A F A K D E A A A J A M O F A A B</string>
     <string name="moca_attention_subtraction_helptext">Menolak 7 secara bersiri mula dengan 100. \n     \n \n     4 or 5 betul: 3 pts \n     2 or 3 betul: 2 pts \n     1 betul: 1 pt \n     0 betul: 0 pt</string>
     <string name="ok">OK</string>
-    <string name="moca_visuo_node_helptext">Menyambung titik.</string>
+    <string name="moca_visuo_node_helptext">Lukis satu garisan, yang berjalan dari sesuatu nombor ke sesuatu huruf secara menaik.</string>
     <string name="number">Nombor-nombor</string>
     <string name="optional">Tidak diwajibkan</string>
-    <string name="moca_visuo_clock_helptext">Lukis JAM: \n (pukul sebelas sepuluh minit)</string>
-    <string name="moca_visuo_cube_helptext">Salin kiub.</string>
+    <string name="moca_visuo_clock_helptext">Lukis jam. Masukkan semua nombor dan tetapkan masanya pada pukul sebelas sepuluh minit</string>
+    <string name="moca_visuo_cube_helptext">alin lukisan ini dengan seberapa tepat yang anda boleh, di dalam ruang di bawah ini</string>
     <string name="moca_orientation_year">Tahun</string>
     <string name="moca_orientation_weekday">Hari</string>
     <string name="moca_orientation_day">Tarikh</string>
@@ -90,4 +90,11 @@
     <string name="eraser">Pemadam</string>
     <string name="pen">Pen</string>
     <string name="clear">Memadam Semua</string>
+    <string name="completed">Siap</string>
+    <string name="confirm_replace_record">Confirm Replace Recording</string>
+    <string name="confirm_replace_record_msg">Proceeding may replace your previous recording. Press Start Recording again to record a new instance.</string>
+    <string name="start_record">Mula Rekod</string>
+    <string name="stop_record">Berhenti Rekod</string>
+    <string name="optional_type_here">Optionally type here..</string>
+    <string name="moca_attention_letters_correct_label">Bilangan respons yang betul: </string>
 </resources>

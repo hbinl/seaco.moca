@@ -4,8 +4,7 @@
     android:layout_height="match_parent" android:gravity="center"
     android:background="#ededed">
 
-    <RelativeLayout
-        android:layout_below="@+id/moca_orientation_helptextview"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -17,43 +16,49 @@
             android:stretchColumns="1"
             android:padding="50dp"
             >
-            <TableRow android:gravity="center">
+            <TableRow android:gravity="center"
+                android:minHeight="550dp">
             <ImageView android:src="@drawable/moca_camel"
-                android:layout_height="150dp"
-                android:layout_width="150dp"
+                android:layout_height="400dp"
+                android:layout_width="400dp"
 />
-            <EditText
-                android:id="@+id/moca_naming_camel_field"
-                />
+            <!--<EditText-->
+                <!--android:id="@+id/moca_naming_camel_field"-->
+                <!--/>-->
             <CheckBox
                 android:id="@+id/moca_naming_camel_mark"/>
         </TableRow>
-            <TableRow android:gravity="center">
+            <TableRow android:gravity="center"
+                android:minHeight="550dp">
                 <ImageView android:src="@drawable/moca_lion"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"/>
-                <EditText
-                    android:id="@+id/moca_naming_lion_field"
-                    />
+                    android:layout_height="400dp"
+                    android:layout_width="400dp"/>
+                <!--<EditText-->
+                    <!--android:id="@+id/moca_naming_lion_field"-->
+                    <!--/>-->
                 <CheckBox
                     android:id="@+id/moca_naming_lion_mark"/>
             </TableRow>
             <TableRow android:gravity="center"
-                android:id="@+id/moca_naming_var_rhino">
+                android:id="@+id/moca_naming_var_rhino"
+                android:minHeight="550dp">
                 <ImageView
                     android:id="@+id/moca_naming_var"
                     android:src="@drawable/moca_rhino"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"/>
-                <EditText
-                    android:id="@+id/moca_naming_var_field"
-                    />
+                    android:layout_height="400dp"
+                    android:layout_width="400dp"/>
+                <!--<EditText-->
+                    <!--android:id="@+id/moca_naming_var_field"-->
+                    <!--/>-->
                 <CheckBox
                     android:id="@+id/moca_naming_var_mark"/>
-            </TableRow>
 
+            </TableRow>
+        <TableRow>
+            <CheckBox android:id="@+id/moca_naming_completed" android:text="@string/completed" />
+        </TableRow>
 
 
         </TableLayout>
-    </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

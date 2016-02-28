@@ -74,6 +74,7 @@
             <CheckBox android:id="@+id/moca_visuo_clock_cb1" android:text="@string/contour"/>
             <CheckBox android:id="@+id/moca_visuo_clock_cb2" android:text="@string/number"/>
             <CheckBox android:id="@+id/moca_visuo_clock_cb3" android:text="@string/hands"/>
+            <CheckBox android:id="@+id/moca_visuo_clock_completed" android:text="@string/completed" />
         </TableRow>
     </TableLayout>
 

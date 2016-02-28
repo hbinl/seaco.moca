@@ -7,7 +7,7 @@
         android:id="@+id/moca_memory_helptextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/moca_memory_delayed_helptext"
+        android:text="@string/moca_memory_helptext"
         android:gravity="center"
         android:textSize="20sp"
 
@@ -101,6 +101,9 @@
                     android:id="@+id/moca_memory_q4_field2"/>
                 <EditText
                     android:id="@+id/moca_memory_q5_field2"/>
+            </TableRow>
+            <TableRow>
+                <CheckBox android:id="@+id/moca_memory_completed" android:text="@string/completed" />
             </TableRow>
         </TableLayout>
     </RelativeLayout>

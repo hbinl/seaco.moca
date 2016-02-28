@@ -87,6 +87,10 @@
                 <CheckBox
                     android:id="@+id/moca_orientation_city_mark"/>
             </TableRow>
+
+            <TableRow>
+                <CheckBox android:id="@+id/moca_orientation_completed" android:text="@string/completed" />
+            </TableRow>
         </TableLayout>
     </RelativeLayout>
 

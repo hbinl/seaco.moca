@@ -149,6 +149,8 @@ public class XMLHandlerSession {
         return filepath;
     }
 
+    public String getDirpath() { return dirpath; }
+
     private void createFile() {
         try {
             //System.out.println("Start");
@@ -231,5 +233,10 @@ public class XMLHandlerSession {
             e.printStackTrace();
         }
 
+    }
+
+    public int genRandomInt() {
+        Random randomizer = new Random();
+        return randomizer.nextInt(1000);
     }
 }

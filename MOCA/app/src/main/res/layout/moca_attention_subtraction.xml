@@ -32,7 +32,9 @@
             android:paddingEnd="150dp"
             >
             <TableRow>
-                <TextView
+
+                <EditText
+                    android:id="@+id/moca_attention_subtraction_q1"
                     android:text="@string/moca_attention_subtraction_q1_labeltext"
                     android:layout_width="80dp"
                     android:textSize="20sp"
@@ -45,7 +47,8 @@
             </TableRow>
             <TableRow>
 
-                <TextView android:text="@string/moca_attention_subtraction_q2_labeltext"
+                <EditText android:text="@string/moca_attention_subtraction_q2_labeltext"
+                    android:id="@+id/moca_attention_subtraction_q2"
                     android:layout_width="80dp"
                     android:textSize="20sp"
                     android:gravity="right"
@@ -56,7 +59,8 @@
             </TableRow>
             <TableRow>
 
-                <TextView android:text="@string/moca_attention_subtraction_q3_labeltext"
+                <EditText android:text="@string/moca_attention_subtraction_q3_labeltext"
+                    android:id="@+id/moca_attention_subtraction_q3"
                     android:layout_width="80dp"
                     android:textSize="20sp"
                     android:gravity="right"
@@ -67,7 +71,8 @@
             </TableRow>
             <TableRow>
 
-                <TextView android:text="@string/moca_attention_subtraction_q4_labeltext"
+                <EditText android:text="@string/moca_attention_subtraction_q4_labeltext"
+                    android:id="@+id/moca_attention_subtraction_q4"
                     android:layout_width="80dp"
                     android:textSize="20sp"
                     android:gravity="right"
@@ -78,7 +83,8 @@
             </TableRow>
             <TableRow>
 
-                <TextView android:text="@string/moca_attention_subtraction_q5_labeltext"
+                <EditText android:text="@string/moca_attention_subtraction_q5_labeltext"
+                    android:id="@+id/moca_attention_subtraction_q5"
                     android:layout_width="80dp"
                     android:textSize="20sp"
                     android:gravity="right"
@@ -87,7 +93,9 @@
                 <CheckBox
                     android:id="@+id/moca_attention_subtraction_q5_mark"/>
             </TableRow>
-
+            <TableRow>
+                <CheckBox android:id="@+id/moca_attention_subtraction_completed" android:text="@string/completed" />
+            </TableRow>
 
         </TableLayout>
     </RelativeLayout>

@@ -40,8 +40,8 @@
     <string name="summary_screen_message">测试完成。资料已被存档。</string>
     <string name="screen_menu_about">关于...</string>
     <string name="screen_menu_view_files">查看过去资料</string>
-    <string name="moca_overview_summary_text">此测验含有十三部分。 \n请按右下角的按钮以开始测验。</string>
-    <string name="moca_visuo_clock_helptext">画时钟（十一点十分）</string>
+    <string name="moca_overview_summary_text">蒙特利尔认知评估(MoCA)新加坡版是一个用来对轻度认知功能障碍进行快速 筛查的量表。它测量多项认知领域,包括:注意力与集中力,执行功能,记忆 力,语言能力,视觉结构技能,抽象思维,计算和定向力。完成整个测试大约 需要10分钟。本量表总分30分,受教育年数不多于六年者,加1分。总分划分界 点还在研究中。 \n \n 此测验含有十三部分。 \n请按右下角的按钮以开始测验。</string>
+    <string name="moca_visuo_clock_helptext">请你在这里画 一个时钟,填上所有的数字,并指示出11点10分</string>
     <string name="moca_summary_text">测验完成。\n请按 完成 以退出。</string>
     <string name="screen_menu_credits">关于..</string>
     <string name="moca_attention_letters_cb">1分 如果错误≤2</string>
@@ -62,7 +62,7 @@
     <string name="moca_language_repeat_q2_labeltext">狗在房间的时候，猫都会躲在床下。</string>
     <string name="contour">轮廓</string>
     <string name="moca_attention_subtraction_helptext">由100开始，连续7减算</string>
-    <string name="moca_visuo_node_helptext">连接以下点</string>
+    <string name="moca_visuo_node_helptext">请画一条线, 按顺序从一个数字到另一 个数字逐渐升高, 但数字外的形状必须与之前一个数字的形状不同。</string>
     <string name="begin">开始</string>
     <string name="moca_memory_q5">红色</string>
     <string name="moca_fluency_helptext">在一分钟内，尽可能多的说出动物名字</string>
@@ -71,7 +71,7 @@
     <string name="moca_memory_label1">第一遍</string>
     <string name="moca_memory_label2">第二遍</string>
     <string name="moca_abstraction_helptext">词语相似性：例如 香蕉－橙＝水果</string>
-    <string name="moca_visuo_cube_helptext">复制立方体</string>
+    <string name="moca_visuo_cube_helptext">请你照着这份图在下  面的空位再画一遍。越准确越好</string>
     <string name="number">数字</string>
     <string name="moca_orientation_day">日</string>
     <string name="moca_orientation_place">地点</string>
@@ -90,4 +90,11 @@
     <string name="clear">清除</string>
     <string name="eraser">橡皮擦</string>
     <string name="pen">铅笔</string>
+    <string name="completed">完成</string>
+    <string name="confirm_replace_record">创建新录音</string>
+    <string name="moca_attention_letters_correct_label">正确回复的数量:</string>
+    <string name="confirm_replace_record_msg">确定创建新录音？请再按“开始录音”</string>
+    <string name="start_record">开始录音</string>
+    <string name="stop_record">停止录音</string>
+    <string name="optional_type_here">...</string>
 </resources>

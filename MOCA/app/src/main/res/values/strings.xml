@@ -5,7 +5,7 @@
 
     <string name="short_title" translatable="false">SEACO MOCA</string>
     <string name="full_title">Montreal Cognitive Assessment</string>
-    <string name="assessment_version">0.7</string>
+    <string name="assessment_version" translatable="false">0.7</string>
     <string-array name="language_choices">
         <item>@string/lang_en</item>
         <item>@string/lang_ms</item>
@@ -46,7 +46,7 @@
     Separate each word with a comma.</string>
     <string name="screen_menu_credits">About</string>
     <string name="credit_text" translatable="false">
-        SEACO MOCA Test App v1.0 \n
+        SEACO MOCA Test App v1.1.1 \n
         Developed by Monash SSPIT 15/16 \n
         Developers: Hao Bin, Nigel, Woei Jer \n
         \n
@@ -58,7 +58,7 @@
         Translated by Dong Yanhong and Quah Soo Li
     </string>
     <string name="moca_overview_summary_text">This test consists of 13 sections. \nPress the Next button on the right to begin.</string>
-    <string name="moca_summary_text">You have successfully completed all the tests. \nClick the Finish button to exit.</string>
+    <string name="moca_summary_text">You have successfully completed all the tests. \nClick the Finish button on top to exit.</string>
     <string name="moca_abstraction_helptext">Similarity between e.g Banana-Orange = Fruit</string>
     <string name="moca_orientation_helptext">Please answer the following questions.</string>
     <string name="strname_overview"> </string>
@@ -131,6 +131,7 @@
     <string name="moca_attention_letters_helptext">Read list of letters. \n The subject must tap with each hand at each letter A. \n No points if more than 2 errors.  </string>
     <string name="moca_attention_letters_q1_labeltext">F B A C M N A A J K L B A F A K D E A A A J A M O F A A B</string>
     <string name="moca_attention_letters_cb">1 Mark for Error &#8804;2</string>
+    <string name="moca_attention_letters_correct_label">Number of correct responses: </string>
 
     <string name="moca_attention_subtraction_helptext">Serial 7 subtraction starting at 100 \n
     \n \n
@@ -138,7 +139,7 @@
     2 or 3 correct: 2 pts \n
     1 correct: 1 pt \n
     0 correct: 0 pt</string>
-    <string name="moca_attention_subtraction_q1_labeltext">93</string>
+    <string name="moca_attention_subtraction_q1_labeltext" translatable="false">93</string>
     <string name="moca_attention_subtraction_q2_labeltext" translatable="false">86</string>
     <string name="moca_attention_subtraction_q3_labeltext" translatable="false">79</string>
     <string name="moca_attention_subtraction_q4_labeltext" translatable="false">72</string>
@@ -156,15 +157,17 @@
     <string name="moca_memory_label2">2nd Trial</string>
 
     <string name="moca_memory_delayed_helptext">Delayed Recall
-    \n Points for uncued recall only.</string>
+    \n Points for uncued recall only.
+    \n \n
+    Timer below shows the time elapsed since the first recall test.</string>
     <string name="moca_memory_delayed_label1">No Cue</string>
     <string name="moca_memory_delayed_label2">Category</string>
     <string name="moca_memory_delayed_label3">Multiple Choice</string>
     <string name="optional">OPTIONAL CUE</string>
 
-    <string name="moca_visuo_node_helptext">Connect the dots.</string>
-    <string name="moca_visuo_clock_helptext">Draw a CLOCK: \n (Ten Past Eleven)</string>
-    <string name="moca_visuo_cube_helptext">Copy cube.</string>
+    <string name="moca_visuo_node_helptext"> Please draw a line, going from a number to a letter in ascending order.</string>
+    <string name="moca_visuo_clock_helptext">Draw a clock. Put in all the numbers and set the time to 10 past 11.</string>
+    <string name="moca_visuo_cube_helptext">Copy this drawing as accurately as you can, in the space below</string>
 
     <string name="contour">Contour</string>
     <string name="number">Number</string>
@@ -175,4 +178,12 @@
     <string name="pen">Pen</string>
     <string name="eraser">Eraser</string>
     <string name="clear">Clear</string>
+
+    <string name="completed">Completed</string>
+
+    <string name="optional_type_here">Optionally type here..</string>
+    <string name="start_record">Start Recording</string>
+    <string name="stop_record">Stop</string>
+    <string name="confirm_replace_record">Confirm Replace Recording</string>
+    <string name="confirm_replace_record_msg">Proceeding may replace your previous recording. Press Start Recording again to record a new instance.</string>
 </resources>

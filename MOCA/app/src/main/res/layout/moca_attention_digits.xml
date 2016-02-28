@@ -50,7 +50,9 @@
                 <CheckBox
                     android:id="@+id/moca_attention_digits_q2_mark"/>
             </TableRow>
-
+            <TableRow>
+                <CheckBox android:id="@+id/moca_attention_digits_completed" android:text="@string/completed" />
+            </TableRow>
 
         </TableLayout>
     </RelativeLayout>

@@ -1,13 +1,20 @@
 package com.seaco.moca;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.media.MediaRecorder;
 import android.os.SystemClock;
+import android.support.design.widget.Snackbar;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.view.View;
+
+import junit.framework.Test;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -55,6 +62,9 @@ public class TestHandler {
             }
         }
 
+        cb = (CheckBox) section.findViewById(R.id.moca_visuo_node_completed);
+        map.put("completed", String.valueOf(cb.isChecked()));
+
         DrawCanvas canvas = (DrawCanvas) activity.findViewById(R.id.node_canvas);
         String strokeTimes = canvas.getStrokeTimes().toString();
         map.put("strokeTimesInMilliSeconds", strokeTimes);
@@ -95,6 +105,9 @@ public class TestHandler {
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
 
+        cb = (CheckBox) section.findViewById(R.id.moca_visuo_cube_completed);
+        map.put("completed", String.valueOf(cb.isChecked()));
+
         String imgname = session.getFilename() + "_image_visuocube.jpg";
         map.put("image", imgname);
         session.saveTestData("visuo-cube", map, true);
@@ -131,6 +144,9 @@ public class TestHandler {
         String imgname = session.getFilename() + "_image_visuoclock.jpg";
         map.put("image", imgname);
 
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_visuo_clock_completed);
+        map.put("completed", String.valueOf(cbx.isChecked()));
+
         map.put("section-mark", String.valueOf(sectionMark));
         session.saveTestData("visuo-clock", map, true);
 
@@ -150,9 +166,9 @@ public class TestHandler {
         long duration = session.getCurrentDateTimeUTC() - startTime;
         map4.put("durationInMilliSeconds", String.valueOf(duration));
 
-        int[] etArray = {
-                R.id.moca_naming_camel_field, R.id.moca_naming_lion_field, R.id.moca_naming_var_field
-        };
+//        int[] etArray = {
+//                R.id.moca_naming_camel_field, R.id.moca_naming_lion_field, R.id.moca_naming_var_field
+//        };
         int[] cbArray = {
                 R.id.moca_naming_camel_mark, R.id.moca_naming_lion_mark, R.id.moca_naming_var_mark
         };
@@ -163,17 +179,17 @@ public class TestHandler {
             str = new String[] {"elephant-input", "elephant-mark"};
         }
 
-        String[] etMapKey = {
-                "camel-input", "lion-input", str[0]
-        };
+//        String[] etMapKey = {
+//                "camel-input", "lion-input", str[0]
+//        };
 
         String[] cbMapKey = {
                 "camel-mark", "lion-mark", str[1]
         };
 
-        for (int i=0; i<etArray.length; i++) {
-            map4.put(etMapKey[i], ((EditText) section.findViewById(etArray[i]))
-                    .getText().toString());
+        for (int i=0; i<cbArray.length; i++) {
+//            map4.put(etMapKey[i], ((EditText) section.findViewById(etArray[i]))
+//                    .getText().toString());
             cb = (CheckBox) section.findViewById(cbArray[i]);
             map4.put(cbMapKey[i], String.valueOf(cb.isChecked()));
             if (cb.isChecked()) {
@@ -181,8 +197,11 @@ public class TestHandler {
             }
         }
 
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_naming_completed);
+        map4.put("completed", String.valueOf(cbx.isChecked()));
+
         testMark += sectionMark;
-        map4.put("section-mark",String.valueOf(sectionMark));
+        map4.put("section-mark", String.valueOf(sectionMark));
         session.saveTestData("naming", map4, true);System.out.println(testMark);
     }
 
@@ -225,6 +244,9 @@ public class TestHandler {
 
         }
 
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_memory_completed);
+        map.put("completed", String.valueOf(cbx.isChecked()));
+
         map.put("section-mark","None");
         session.saveTestData("memory", map, true);System.out.println(testMark);
     }
@@ -256,6 +278,9 @@ public class TestHandler {
                 sectionMark += 1;
             }
         }
+
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_attention_digits_completed);
+        map.put("completed", String.valueOf(cbx.isChecked()));
 
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
@@ -293,6 +318,13 @@ public class TestHandler {
 
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
+
+        EditText ett = (EditText) section.findViewById(R.id.moca_attention_letters_num_correct);
+        map.put("num-correct-responses", ett.getText().toString());
+
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_attention_letters_completed);
+        map.put("completed", String.valueOf(cbx.isChecked()));
+
         session.saveTestData("attention-letters", map, true);System.out.println(testMark);
     }
 
@@ -320,8 +352,24 @@ public class TestHandler {
                 "q1-mark", "q2-mark", "q3-mark", "q4-mark", "q5-mark"
         };
 
-        for (int i=0; i<cbArray.length; i++) {
+        // Other subtraction options
 
+        int[] optionalDataArray = {
+                R.id.moca_attention_subtraction_q1,
+                R.id.moca_attention_subtraction_q2,
+                R.id.moca_attention_subtraction_q3,
+                R.id.moca_attention_subtraction_q4,
+                R.id.moca_attention_subtraction_q5
+        };
+
+        String[] optionalDataMapKey = {
+                "q1-input", "q2-input", "q3-input", "q4-input", "q5-input",
+        };
+
+
+        for (int i=0; i<cbArray.length; i++) {
+            map.put(optionalDataMapKey[i], ((EditText) section.findViewById(optionalDataArray[i]))
+                    .getText().toString());
             cb = (CheckBox) section.findViewById(cbArray[i]);
                         map.put(cbMapKey[i], String.valueOf(cb.isChecked()));
             if (cb.isChecked()) {
@@ -335,9 +383,14 @@ public class TestHandler {
             sectionMark = 2;
         }
 
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_attention_subtraction_completed);
+        map.put("completed", String.valueOf(cbx.isChecked()));
+
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
         session.saveTestData("attention-subtraction", map, true);System.out.println(testMark);
+
+
     }
 
     public void section9(long startTime) {
@@ -369,13 +422,91 @@ public class TestHandler {
             }
         }
 
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_language_repeat_completed);
+        map.put("completed", String.valueOf(cbx.isChecked()));
+
         testMark += sectionMark;
-        map.put("section-mark",String.valueOf(sectionMark));
-        session.saveTestData("lang-repeat", map, true);System.out.println(testMark);
+        map.put("section-mark", String.valueOf(sectionMark));
+        session.saveTestData("lang-repeat", map, true);
+        System.out.println(testMark);
+
+
+        section10AudioPrepare();
+    }
+
+    private boolean recordingState;
+    private boolean hasRecorded;
+    private MediaRecorder mr;
+    private Chronometer section10Watch;
+
+
+    public void section10AudioPrepare()  {
+        section10Watch = (Chronometer) container.getChildAt(10).findViewById(R.id.chronometer_10);
+
+        hasRecorded = false;
+        recordingState = false;
+
+        final Button rec_button = (Button) container.getChildAt(10).findViewById(R.id.chronometer_10_startstop);
+        rec_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if (recordingState) {
+                    rec_button.setText(R.string.start_record);
+                    section10Watch.stop();
+                    recordingState = false;
+                    System.out.println("X");
+//                    mr.stop();
+//                    mr.release();
+
+
+                } else {
+
+                    if (hasRecorded) {
+                        new AlertDialog.Builder(view.getContext())
+                                .setTitle(view.getContext().getString(R.string.confirm_replace_record))
+                                .setMessage(view.getContext().getString(R.string.confirm_replace_record_msg))
+                                .setCancelable(true)
+                                .setNegativeButton(view.getContext().getString(R.string.confirm_cancel), null)
+                                .setPositiveButton(view.getContext().getString(R.string.ok), new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        hasRecorded = false;
+                                    }
+                                })
+                                .show();
+                    } else {
+                        hasRecorded = true;
+                        rec_button.setText(R.string.stop_record);
+                        section10Watch.setBase(SystemClock.elapsedRealtime());
+                        section10Watch.start();
+                        String fname = session.getDirpath() + session.getUUID() + "_" + session.genRandomInt() + "_s10_audio.aac";
+                        System.out.println(fname);
+                        recordingState = true;
+                    try {
+                        mr = new MediaRecorder();
+                        mr.setAudioSource(MediaRecorder.AudioSource.MIC);
+                        mr.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+
+                        mr.setOutputFile(fname);
+                        mr.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+
+                        mr.prepare();
+                        mr.start();
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    }
+
+                }
+            }
+
+        });
+
     }
 
     public void section10(long startTime) {
-
 
         int sectionMark = 0;
 
@@ -411,6 +542,9 @@ public class TestHandler {
                 sectionMark += 1;
             }
         }
+
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_fluency_completed);
+        map10.put("completed", String.valueOf(cbx.isChecked()));
 
         testMark += sectionMark;
         map10.put("section-mark",String.valueOf(sectionMark));
@@ -453,6 +587,9 @@ public class TestHandler {
                 sectionMark += 1;
             }
         }
+
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_abstraction_completed);
+        map11.put("completed", String.valueOf(cbx.isChecked()));
 
         testMark += sectionMark;
         map11.put("section-mark",String.valueOf(sectionMark));
@@ -511,37 +648,40 @@ public class TestHandler {
 
         }
 
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_memory_delayed_completed);
+        map.put("completed", String.valueOf(cbx.isChecked()));
+
         testMark += sectionMark;
         map.put("section-mark",String.valueOf(sectionMark));
         session.saveTestData("memory-delayed", map, true);
 
 
-        // Optional Data Saving
-        int[] optionalDataArray = {
-                R.id.moca_memory_delayed_q1_field2,
-                R.id.moca_memory_delayed_q2_field2,
-                R.id.moca_memory_delayed_q3_field2,
-                R.id.moca_memory_delayed_q4_field2,
-                R.id.moca_memory_delayed_q5_field2,
-                R.id.moca_memory_delayed_q1_field3,
-                R.id.moca_memory_delayed_q2_field3,
-                R.id.moca_memory_delayed_q3_field3,
-                R.id.moca_memory_delayed_q4_field3,
-                R.id.moca_memory_delayed_q5_field3,
-        };
+//        // Optional Data Saving
+//        int[] optionalDataArray = {
+//                R.id.moca_memory_delayed_q1_field2,
+//                R.id.moca_memory_delayed_q2_field2,
+//                R.id.moca_memory_delayed_q3_field2,
+//                R.id.moca_memory_delayed_q4_field2,
+//                R.id.moca_memory_delayed_q5_field2,
+//                R.id.moca_memory_delayed_q1_field3,
+//                R.id.moca_memory_delayed_q2_field3,
+//                R.id.moca_memory_delayed_q3_field3,
+//                R.id.moca_memory_delayed_q4_field3,
+//                R.id.moca_memory_delayed_q5_field3,
+//        };
+//
+//        String[] optionalDataMapKey = {
+//                "q1-input2", "q2-input2", "q3-input2", "q4-input2", "q5-input2",
+//                "q1-input3", "q2-input3", "q3-input3", "q4-input3", "q5-input3"
+//        };
+//
+//        map = new HashMap<String, String>();
+//        for (int i=0; i<optionalDataArray.length; i++) {
+//            map.put(optionalDataMapKey[i], ((EditText) section.findViewById(optionalDataArray[i]))
+//                    .getText().toString());
+//        }
 
-        String[] optionalDataMapKey = {
-                "q1-input2", "q2-input2", "q3-input2", "q4-input2", "q5-input2",
-                "q1-input3", "q2-input3", "q3-input3", "q4-input3", "q5-input3"
-        };
-
-        map = new HashMap<String, String>();
-        for (int i=0; i<optionalDataArray.length; i++) {
-            map.put(optionalDataMapKey[i], ((EditText) section.findViewById(optionalDataArray[i]))
-                    .getText().toString());
-        }
-
-        session.saveTestData("memory-delayed-optionals", map, true);System.out.println(testMark);
+//        session.saveTestData("memory-delayed-optionals", map, true);System.out.println(testMark);
     }
 
     public void section13(long startTime) {
@@ -586,6 +726,9 @@ public class TestHandler {
                 sectionMark += 1;
             }
         }
+
+        CheckBox cbx = (CheckBox) section.findViewById(R.id.moca_orientation_completed);
+        map13.put("completed", String.valueOf(cbx.isChecked()));
 
         testMark += sectionMark;
         map13.put("section-mark",String.valueOf(sectionMark));

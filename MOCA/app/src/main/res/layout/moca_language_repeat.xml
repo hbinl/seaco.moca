@@ -51,7 +51,9 @@
                     android:id="@+id/moca_language_repeat_q2_mark"/>
             </TableRow>
 
-
+            <TableRow>
+                <CheckBox android:id="@+id/moca_language_repeat_completed" android:text="@string/completed" />
+            </TableRow>
         </TableLayout>
     </RelativeLayout>
 </RelativeLayout>

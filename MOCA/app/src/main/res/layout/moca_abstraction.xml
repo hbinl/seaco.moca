@@ -51,7 +51,9 @@
                 <CheckBox
                     android:id="@+id/moca_abstraction_q2_mark"/>
             </TableRow>
-
+            <TableRow>
+                <CheckBox android:id="@+id/moca_abstraction_completed" android:text="@string/completed" />
+            </TableRow>
 
         </TableLayout>
     </RelativeLayout>

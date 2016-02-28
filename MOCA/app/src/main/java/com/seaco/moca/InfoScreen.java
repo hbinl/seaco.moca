@@ -7,10 +7,12 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaRecorder;
 import android.net.Uri;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Calendar;
 
@@ -91,6 +94,16 @@ public class InfoScreen extends AppCompatActivity {
 
         testHandler = new TestHandler(this, session);
 
+        Button fin_button = (Button) findViewById(R.id.moca_summary_finish_button);
+        fin_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                goBackHome();
+            }
+
+        });
+
     }
 
     private void variabilityCheck() {
@@ -153,6 +166,7 @@ public class InfoScreen extends AppCompatActivity {
         container = (RelativeLayout) findViewById(R.id.moca_tests_container);
 
         for (int i=0; i<pageArray.length; i++) {
+            System.out.println(i);
             View child = getLayoutInflater().inflate(pageArray[i],null);
             container.addView(child);
             child.setVisibility(View.GONE);
@@ -326,6 +340,9 @@ public class InfoScreen extends AppCompatActivity {
 
 
     }
+
+
+
 
 
     @Override
